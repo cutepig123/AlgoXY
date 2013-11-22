@@ -1,0 +1,2338 @@
+<!DOCTYPE html>   
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="zh-CN" prefix="og: http://ogp.me/ns#" xmlns:wb="http://open.weibo.com/wb" class="no-js"> <!--<![endif]-->
+
+
+<!-- BEGIN head -->
+<head>
+
+	<!-- Title -->
+	<title>面试题分析：我的Twitter技术面试失败了 - 博客 - 伯乐在线</title>
+	
+	<!-- Meta Tags -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="baidu_union_verify" content="e955957fd4b6a06563bea71fe0197a50">
+	
+	<!-- Favicon & Mobileicon -->
+	<link rel="shortcut icon" href="http://cdn2.jobbole.com/2013/10/favicon.png" />
+	<link rel="apple-touch-icon" href="http://cdn2.jobbole.com/2013/10/jobbole-blog-logo-mobile.png" />
+	
+	<!-- RSS, Atom & Pingbacks -->
+		<link rel="alternate" title="博客 &#8211; 伯乐在线 RSS Feed" href="http://blog.jobbole.com/feed/" />
+		<link rel="alternate" title="RSS .92" href="http://blog.jobbole.com/feed/rss/" />
+	<link rel="alternate" title="Atom 0.3" href="http://blog.jobbole.com/feed/atom/" />
+	<link rel="pingback" href="http://blog.jobbole.com/xmlrpc.php" />
+	
+	<!-- Theme Hook -->
+	
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.4.13 - http://yoast.com/wordpress/seo/ -->
+<link rel="canonical" href="http://blog.jobbole.com/50705/" />
+<meta property='og:locale' content='zh_CN'/>
+<meta property='og:type' content='article'/>
+<meta property='og:title' content='面试题分析：我的Twitter技术面试失败了 - 博客 - 伯乐在线'/>
+<meta property='og:description' content='确认我返回亚马逊实习的截止期限是10月28日，但是我的朋友Daniel说服我如果我被Twitter录取，我就不用参加任何面试了。所以我去Twitter面试了。
+
+首先他们让我在一个小时内完成两道编程能力的问题。问题很有意思：“这是回文吗？”以及“计算二维数组的平衡点”。我不是很有自信，但是Twitter的一个招聘人员Judy给我发了email并安排了周三5:30的电话甄选。'/>
+<meta property='og:url' content='http://blog.jobbole.com/50705/'/>
+<meta property='og:site_name' content='博客 - 伯乐在线'/>
+<meta property='og:image' content='http://cdn2.jobbole.com/2011/11/Twitter-logo.jpg'/>
+<meta property='og:image' content='http://ww1.sinaimg.cn/mw690/7cc829d3gw1ea56snnnkzj205m03z744.jpg'/>
+<meta property='og:image' content='http://ww3.sinaimg.cn/mw690/7cc829d3gw1ea56pjntkoj205m03zaa2.jpg'/>
+<meta property='og:image' content='http://ww1.sinaimg.cn/mw690/7cc829d3gw1ea56plq87ij209n04x74b.jpg'/>
+<meta property='og:image' content='http://ww3.sinaimg.cn/mw690/7cc829d3gw1ea56pkka4bj209n04xglw.jpg'/>
+<meta property='og:image' content='http://ww2.sinaimg.cn/mw690/7cc829d3gw1ea56pl3x3yj209n04xaaf.jpg'/>
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel='stylesheet' id='wp-recentcomments-css'  href='http://blog.jobbole.com/wp-content/plugins/wp-recentcomments/css/wp-recentcomments.css?ver=2.2.7' type='text/css' media='screen' />
+<link rel='stylesheet' id='v48fv_images-css'  href='http://blog.jobbole.com/wp-content/plugins/mu-widgets/library/base/public/css/images.css?ver=1.2.v48fv' type='text/css' media='all' />
+<link rel='stylesheet' id='v48fv_front-css'  href='http://blog.jobbole.com/wp-content/plugins/mu-widgets/library/base/public/css/front.css?ver=1.2.v48fv' type='text/css' media='all' />
+<link rel='stylesheet' id='v48fv_common-css'  href='http://blog.jobbole.com/wp-content/plugins/mu-widgets/library/base/public/css/common.css?ver=1.2.v48fv' type='text/css' media='all' />
+<link rel='stylesheet' id='bbp-default-bbpress-css'  href='http://blog.jobbole.com/wp-content/plugins/bbpress/templates/default/css/bbpress.css?ver=2.3.2' type='text/css' media='screen' />
+<link rel='stylesheet' id='bp-legacy-css-css'  href='http://blog.jobbole.com/wp-content/plugins/buddypress/bp-templates/bp-legacy/css/buddypress.css?ver=1.7.2' type='text/css' media='screen' />
+<link rel='stylesheet' id='cptchStylesheet-css'  href='http://blog.jobbole.com/wp-content/plugins/captcha/css/style.css?ver=3.5.2' type='text/css' media='all' />
+<link rel='stylesheet' id='bpbbpst-bbpress-widget-css-css'  href='http://blog.jobbole.com/wp-content/plugins/buddy-bbpress-support-topic/css/bpbbpst-bbpress-widget.css?ver=3.5.2' type='text/css' media='all' />
+<link rel='stylesheet' id='core3.0-css'  href='http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='core-Default3.0-css'  href='http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/styles/shCoreDefault.css?ver=3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='theme-Default3.0-css'  href='http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='lightboxStyle-css'  href='http://blog.jobbole.com/wp-content/plugins/lightbox-plus/css/shadowed/colorbox.css?ver=2.6' type='text/css' media='screen' />
+<script type='text/javascript' src='http://blog.jobbole.com/wp-includes/js/jquery/jquery.js?ver=1.8.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var BP_DTheme = {"my_favs":"\u6211\u7684\u6536\u85cf","accepted":"\u5df2\u63a5\u53d7","rejected":"\u5df2\u62d2\u7edd","show_all_comments":"\u663e\u793a\u8be5\u8bdd\u9898\u6240\u6709\u8bc4\u8bba","show_all":"\u663e\u793a\u5168\u90e8","comments":"\u8bc4\u8bba","close":"\u5173\u95ed","view":"\u67e5\u770b","mark_as_fav":"\u6536\u85cf","remove_fav":"\u79fb\u9664\u6536\u85cf"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/plugins/buddypress/bp-templates/bp-legacy/js/buddypress.js?ver=1.7.2'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-includes/js/comment-reply.min.js?ver=3.5.2'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/plugins/q2w3-fixed-widget/js/q2w3-fixed-widget.js?ver=3.0'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/js/modernizr.js?ver=2.5.3'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/js/rc-textarea-hl.js?ver=1.3'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.jobbole.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.jobbole.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='http://blog.jobbole.com/?p=50705' />
+
+		<script type="text/javascript">
+			/* <![CDATA[ */
+			
+						jQuery(document).ready( function() {
+
+				/* Use backticks instead of <code> for the Code button in the editor */
+				if ( typeof( edButtons ) !== 'undefined' ) {
+					edButtons[110] = new QTags.TagButton( 'code', 'code', '`', '`', 'c' );
+					QTags._buttonsInit();
+				}
+
+				/* Tab from topic title */
+				jQuery( '#bbp_topic_title' ).bind( 'keydown.editor-focus', function(e) {
+					if ( e.which !== 9 )
+						return;
+
+					if ( !e.ctrlKey && !e.altKey && !e.shiftKey ) {
+						if ( typeof( tinymce ) !== 'undefined' ) {
+							if ( ! tinymce.activeEditor.isHidden() ) {
+								var editor = tinymce.activeEditor.editorContainer;
+								jQuery( '#' + editor + ' td.mceToolbar > a' ).focus();
+							} else {
+								jQuery( 'textarea.bbp-the-content' ).focus();
+							}
+						} else {
+							jQuery( 'textarea.bbp-the-content' ).focus();
+						}
+
+						e.preventDefault();
+					}
+				});
+
+				/* Shift + tab from topic tags */
+				jQuery( '#bbp_topic_tags' ).bind( 'keydown.editor-focus', function(e) {
+					if ( e.which !== 9 )
+						return;
+
+					if ( e.shiftKey && !e.ctrlKey && !e.altKey ) {
+						if ( typeof( tinymce ) !== 'undefined' ) {
+							if ( ! tinymce.activeEditor.isHidden() ) {
+								var editor = tinymce.activeEditor.editorContainer;
+								jQuery( '#' + editor + ' td.mceToolbar > a' ).focus();
+							} else {
+								jQuery( 'textarea.bbp-the-content' ).focus();
+							}
+						} else {
+							jQuery( 'textarea.bbp-the-content' ).focus();
+						}
+
+						e.preventDefault();
+					}
+				});
+			});
+						/* ]]> */
+		</script>
+
+	
+	<script type="text/javascript">var ajaxurl = 'http://blog.jobbole.com/wp-admin/admin-ajax.php';</script>
+
+
+<!-- Comment Rating plugin Version: 2.9.32 by Bob King, http://wealthynetizen.com/, dynamic comment voting & styling. --> 
+<style type="text/css" media="screen">
+   .ckrating_highly_rated {background-color:#FFFFCC !important;}
+   .ckrating_poorly_rated {opacity:0.6;filter:alpha(opacity=60) !important;}
+   .ckrating_hotly_debated {background-color:#FFF0F5 !important;}
+</style>
+
+<script type="text/javascript">
+	window._wp_rp_static_base_url = 'http://dtmvdvtzf8rz0.cloudfront.net/static/';
+	window._wp_rp_wp_ajax_url = "http://blog.jobbole.com/wp-admin/admin-ajax.php";
+	window._wp_rp_plugin_version = '2.8';
+	window._wp_rp_post_id = '50705';
+	window._wp_rp_num_rel_posts = '10';
+</script>
+
+<!-- WP SyntaxHighlighter Ver.1.7.3 CSS for code Begin -->
+<style type='text/css'>
+.syntaxhighlighter,
+.syntaxhighlighter a,
+.syntaxhighlighter div,
+.syntaxhighlighter code,
+.syntaxhighlighter table,
+.syntaxhighlighter table td,
+.syntaxhighlighter table tr,
+.syntaxhighlighter table tbody,
+.syntaxhighlighter table thead,
+.syntaxhighlighter table caption,
+.syntaxhighlighter textarea {
+font-size: 12px !important; /* Set the font size in pixels */  
+font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; /* Set the font type */  
+}
+.syntaxhighlighter table caption {
+/* For Title(Caption) */  
+font-size: 14px !important; /* Set the font size in pixels */  
+font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; /* Set the font type */  
+}
+.syntaxhighlighter.nogutter td.code .line {
+/* Set the left padding space when no-gutter in ver. 3.0 */  
+padding-left: 3px !important;
+}
+.syntaxhighlighter {
+/* For Chrome/Safari(WebKit) */  
+/* Hide the superfluous vertical scrollbar in ver. 3.0 */  
+overflow-y: hidden !important;
+padding: 1px !important;
+}
+.widget-area.syntaxhighlighter a,
+.widget-area.syntaxhighlighter div,
+.widget-area.syntaxhighlighter code,
+.widget-area.syntaxhighlighter table,
+.widget-area.syntaxhighlighter table td,
+.widget-area.syntaxhighlighter table tr,
+.widget-area.syntaxhighlighter table tbody,
+.widget-area.syntaxhighlighter table thead,
+.widget-area.syntaxhighlighter table caption,
+.widget-area.syntaxhighlighter textarea {
+/* For Widget */  
+font-size: 14px !important; /* Set the font size in pixels */  
+font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; /* Set the font type */  
+}
+.widget-area table caption {
+/* For Widget */  
+/* For Title(Caption) */  
+font-size: 10px !important; /* Set the font size in pixels */  
+font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; /* Set the font type */  
+}
+</style>
+<!-- WP SyntaxHighlighter Ver.1.7.3 CSS for code End -->
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="http://blog.jobbole.com/wp-content/themes/jobboleblogv3/style.css" media="screen" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noticia+Text:400,700italic,700,400italic" media="screen" />
+	<style>
+				*::selection { background: #0099cc; }
+		*::-moz-selection { background: #0099cc; }
+		body { background: #ffffff  }
+		a, .tabs ul.nav li a:hover, .tabs ul.nav li.active a, .dropcap, .toggle.hover .toggle-title, li.comment cite a:hover, h3.widget-title, .post-meta .meta-title:hover, .the-latest a:hover h4, .aw_socialcounter_widget li a:hover, .aw_tabbed_widget #tab-latest-comments a:hover { color: #0099cc; }
+		a:hover { color: #b30000; }
+		input:focus, textarea:focus { border-color: #0099cc; }
+		#searchsubmit, .highlight, .aw_tabbed_widget .tabs ul.nav li.active a, footer .aw_tabbed_widget .tabs ul.nav li.active a, #top .aw_tabbed_widget .tabs ul.nav li.active a, .aw_tabbed_widget .tabs ul.nav li a:hover, footer .aw_tabbed_widget .tabs ul.nav li a:hover, #top .aw_tabbed_widget .tabs ul.nav li a:hover, .aw_twitter_widget .twitter-icon, .testimonial-icon, #top-closed:hover, .flex-control-nav a:hover, .flex-control-nav a.flex-active { background-color: #0099cc; }
+		.submit { background-color: #0099cc; border-color: #007399; }
+		.submit:hover { background-color: #b30000; border-color: #860000; }
+		#searchsubmit:hover { background-color: #b30000; }
+		.toggle.hover .toggle-icon { border-top-color: #0099cc; }
+		.toggle.hover.active .toggle-icon { border-bottom-color: #0099cc; }
+		.flex-direction-nav li .flex-prev:hover { border-right-color: #0099cc; }
+		.flex-direction-nav li .flex-next:hover { border-left-color: #0099cc; }
+		@media only screen and (min-width: 768px) and (max-width: 959px) {
+			.aw_tabbed_widget .tabs ul.nav li a:hover, .tabs ul.nav li.active a { color: #0099cc; }
+		}
+		@media screen and (max-width: 767px) {
+			.tabs ul.nav li a:hover, .tabs ul.nav li.active a { color: #0099cc; }
+		}
+	</style>
+		
+	<!--[if IE 8]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    <![endif]-->
+
+	<!-- Links: RSS + Atom Syndication + Pingback etc. -->
+	<link rel="alternate" type="application/rss+xml" title="博客 &#8211; 伯乐在线 RSS Feed" href="http://blog.jobbole.com/feed/" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="http://blog.jobbole.com/feed/rss/" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://blog.jobbole.com/feed/atom/" />
+	<link rel="pingback" href="http://blog.jobbole.com/xmlrpc.php" />
+	
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2606191112" type="text/javascript" charset="utf-8"></script>
+
+<!-- END head -->
+</head>
+
+<!-- BEGIN body -->
+<body class="single single-post postid-50705 single-format-standard chrome no-js">
+
+		
+	
+	<!-- BEGIN #top-nav -->
+	<nav id="top-nav" class="menu-nav">
+		
+		<!-- BEGIN .container -->
+		<div class="container">
+
+			<div class="grid-12"><ul id="menu-main-menu" class="menu"><li id="menu-item-47599" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47599"><a href="http://www.jobbole.com/">首页</a></li>
+<li id="menu-item-46856" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46856"><a href="http://www.jobbole.com/news/">资讯</a></li>
+<li id="menu-item-46858" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46858"><a href="http://www.jobbole.com/groups">小组</a></li>
+<li id="menu-item-46860" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46860"><a href="http://hao.jobbole.com/">资源</a></li>
+<li id="menu-item-48520" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48520"><a href="http://tz.jobbole.com/">编程挑战</a></li>
+<li id="menu-item-46861" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46861"><a href="http://www.jobbole.com/register">注册</a></li>
+<li id="menu-item-46862" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46862"><a href="http://www.jobbole.com/wp-login.php">登录</a></li>
+</ul></div>				
+			<div class="clear"></div>
+		
+		</div>
+		<!-- END .container -->
+    
+	</nav>
+	<!-- END #top-nav -->
+	
+	  	
+	<!-- BEGIN #wrapper -->
+	<div id="wrapper" class="container">
+
+		<!-- BEGIN header -->
+		<header>
+		
+						
+			<div class="header-wrapper">
+								
+				<!-- BEGIN #logo -->
+				<div id="logo" class="leaderboard-true">
+				
+										<a href="http://blog.jobbole.com"><img src="http://cdn2.jobbole.com/2013/08/jbblog-logo.png" width="137" height="85" alt="博客 &#8211; 伯乐在线"/></a>
+									
+				</div>
+				<!-- END #logo -->
+				
+				<!-- BEGIN #leaderboard -->
+				<div id="leaderboard">
+				
+					<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7056282119617872";
+google_ad_slot = "3173555691";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>				
+				</div>
+				<!-- END #leaderboard -->
+				
+				<div class="clear"></div>
+			
+			</div>
+			
+						
+			<div class="clear"></div>
+			
+			<!-- BEGIN #main-nav -->
+			<nav id="main-nav" class="grid-12 menu-nav">
+
+				<div class="menu-sub-menu-container"><ul id="main-nav-menu" class="menu"><li id="menu-item-33290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33290"><a href="http://blog.jobbole.com/">首页</a></li>
+<li id="menu-item-33406" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-33406"><a href="http://blog.jobbole.com/all-posts/">最新文章</a></li>
+<li id="menu-item-33325" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33325"><a href="http://blog.jobbole.com/category/news/">资讯</a></li>
+<li id="menu-item-33319" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-33319"><a href="http://blog.jobbole.com/category/programmer/">程序员</a></li>
+<li id="menu-item-33323" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33323"><a href="http://blog.jobbole.com/category/design/">设计</a></li>
+<li id="menu-item-33313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33313"><a href="http://blog.jobbole.com/category/it-tech/">IT技术</a></li>
+<li id="menu-item-33317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33317"><a href="http://blog.jobbole.com/category/startup/">创业</a></li>
+<li id="menu-item-33318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33318"><a href="http://blog.jobbole.com/category/overseas/">在国外</a></li>
+<li id="menu-item-33322" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33322"><a href="http://blog.jobbole.com/category/marketing/">营销</a></li>
+<li id="menu-item-33665" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33665"><a href="http://blog.jobbole.com/category/humor-comic/">趣文</a></li>
+<li id="menu-item-40514" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-40514"><a href="http://blog.jobbole.com/category/special/">特别分享</a></li>
+<li id="menu-item-33388" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33388"><a href="http://blog.jobbole.com/category/other/">更多 ></a>
+<ul class="sub-menu">
+	<li id="menu-item-33408" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33408"><a href="http://blog.jobbole.com/category/resources/">工具与资源</a></li>
+	<li id="menu-item-33407" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33407"><a href="http://blog.jobbole.com/category/books/">书籍与教程</a></li>
+	<li id="menu-item-33321" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33321"><a href="http://blog.jobbole.com/category/freelance/">自由职业</a></li>
+	<li id="menu-item-33315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33315"><a href="http://blog.jobbole.com/category/internet/">互联网</a></li>
+	<li id="menu-item-33320" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33320"><a href="http://blog.jobbole.com/category/management/">管理</a></li>
+	<li id="menu-item-33391" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33391"><a href="http://blog.jobbole.com/category/operation/">运营</a></li>
+	<li id="menu-item-33389" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33389"><a href="http://blog.jobbole.com/category/humanresource/">人力资源</a></li>
+	<li id="menu-item-33390" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-33390"><a href="http://blog.jobbole.com/category/career/">职场分享</a></li>
+</ul>
+</li>
+</ul></div>				
+				<div class="clear"></div>
+            
+			</nav>
+			<!-- END #main-nav -->
+			
+			<div class="clear"></div>
+		
+		</header>
+		<!-- END header -->
+		
+		<div id="breadcrumb" class="grid-12 margin-20"><div class="breadcrumb-wrapper"><!-- Breadcrumb NavXT 4.4.0 -->
+<a title="Go to 伯乐在线." href="http://www.jobbole.com" class="main-home">伯乐在线</a> &gt; <a href="http://blog.jobbole.com" class="home">首页</a> &gt; <a href="http://blog.jobbole.com/all-posts/" class="post-root post-post">所有文章</a> &gt; <a href="http://blog.jobbole.com/category/programmer/" class="category">程序员</a> &gt; 面试题分析：我的Twitter技术面试失败了</div></div><div class="clear"></div>
+
+<!-- BEGIN .grid-8 -->
+<div class="grid-8">
+
+		
+	<!-- BEGIN .post -->
+<div class="post-50705 post type-post status-publish format-standard hentry category-programmer category-career tag-twitter tag-1876 odd" id="post-50705">
+	
+	<!-- BEGIN .entry-header -->
+	<div class="entry-header">
+	
+				
+		<h1>面试题分析：我的Twitter技术面试失败了</h1>
+		
+							
+	</div>
+	<!-- BEGIN .entry-header -->
+	
+	<!-- BEGIN .entry-meta -->
+	<div class="entry-meta">
+	
+		<p>2013/11/01 | 分类： <a href="http://blog.jobbole.com/category/programmer/" title="查看 程序员 中的全部文章" rel="category tag">程序员</a>, <a href="http://blog.jobbole.com/category/career/" title="查看 职场分享 中的全部文章" rel="category tag">职场分享</a> | <a href="http://blog.jobbole.com/50705/#comments" title="《面试题分析：我的Twitter技术面试失败了》上的评论">32  条评论</a> 
+
+
+		 | 标签： <a href="http://blog.jobbole.com/tag/twitter/">Twitter</a>, <a href="http://blog.jobbole.com/tag/%e6%8a%80%e6%9c%af%e9%9d%a2%e8%af%95/">技术面试</a></p>
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style" style="display: block; margin: 0 0px; clear: both;"><span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_weixin"></a>
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_renren"></a>
+<a class="jiathis_button_douban"></a>
+<a class="jiathis_button_readitlater"></a>
+<a class="jiathis_button_evernote"></a>
+<a class="jiathis_button_ydnote"></a>
+<a href="http://www.jiathis.com/share?uid=1745061" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<!-- JiaThis Button END -->
+
+
+	</div>
+	<!-- END .entry-meta -->
+
+	<!-- BEGIN .entry -->
+	<div class="entry">
+					
+		<b>本文由 <a href='http://blog.jobbole.com'>伯乐在线</a> - <a href='http://blog.jobbole.com/author/cugbabyebar/'>CuGBabyBeaR</a> 翻译自 <a target='_blank' href='http://qandwhat.apps.runkite.com/i-failed-a-twitter-interview/'>runkite</a>。欢迎加入<a target='_blank' href='http://www.jobbole.com/groups/6/'>技术翻译小组</a>。转载请参见文章末尾处的要求。</b><br/><br/>
+<!-- div id="ad1">
+<script type="text/javascript">
+google_ad_client = "ca-pub-7056282119617872";
+google_ad_slot = "6645040531";
+google_ad_width = 300;
+google_ad_height = 250;
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<br/ -->
+
+<p align="left">确认我返回亚马逊实习的截止期限是10月28日，但是我的朋友Daniel说服我如果我被Twitter录取，我就不用参加任何面试了。所以我去Twitter面试了。</p>
+<p align="left">首先他们让我在一个小时内完成两道编程能力的问题。问题很有意思：“这是回文<span style="color: #888888;">（译注：正着读和倒着读是一样的）</span>吗？”以及“计算二维数组的平衡点”。我不是很有自信，但是Twitter的一个招聘人员Judy给我发了email并安排了周三5:30的电话甄选。</p>
+<p align="left">我不知道你怎么样，反正我在面试前是很紧张的。我觉得这主要是因为我不想让面试官认为我很蠢。所以你可以想象，5:20我清空了桌子，记事本上标注了“Twitter面试，十月23日，周三”，还有为涂画准备的两只削尖的铅笔。然后5:30到了，我开始盯着我的电话。</p>
+<p align="left">5:35我去google了一下“加利福尼亚时间”来确定我的时差计算是正确的。没问题：Google说是太平洋标准时间2:30，美国东部时间5:30。</p>
+<p align="left">5:48我给Judy发了email，请她看下情况。10分钟后我接到了一个来自旧金山的电话。Judy对她搞砸了这件事情道歉，并告诉我Justin现在可以面试我。</p>
+<p align="left"><em>深呼吸</em></p>
+<p align="left">“棒极了，我们开始吧！”</p>
+<p align="left">Justin同样对这个行程安排错误道歉，并很快深入到编程问题中：</p>
+<p align="left">“看下面这个图片”</p>
+<p align="left"><img alt="" src="http://ww1.sinaimg.cn/mw690/7cc829d3gw1ea56snnnkzj205m03z744.jpg" /></p>
+<p align="left">“在这个图片里我们有不同高度的墙。这个图片由一个整数数组所代表，数组中每个数是墙的高度。上边的图可以表示为数组[2,5,1,2,3,4,7,7,6]”</p>
+<p align="left">“假如开始下雨了，那么墙之间的水坑能够装多少水呢？”</p>
+<p align="left"><img alt="" src="http://ww3.sinaimg.cn/mw690/7cc829d3gw1ea56pjntkoj205m03zaa2.jpg" /></p>
+<p align="left">“以1&#215;1的方块为单位计算容积。所以，在上边的图中下标为1以左的都会漏掉。下标7以右的也会漏掉。剩下的只有在1和6之间的一坑水，容积是10”</p>
+<p align="left">_______</p>
+<p align="left"><span style="color: #008000;">// 给好奇的读者的旁注：我在底部附上了正确答案的要点。你可以继续阅读而不怕剧透。:)</span></p>
+<p align="left">_______</p>
+<p align="left">我首先试图做的事情是搞清楚在给定的两个下标之间到底有多少水。这个过程跟微积分很像，所以我立即想起可以用极大值。实际上在上边的图片中，下标2以上的水是由周围的两个极大值下标1和6约束的。</p>
+<p align="left">我把我的想法说了出来：“如果我们找到所有的极大值，然后在他们之间填水。这样做有用么？”</p>
+<p align="left">“恩，这样应该有用” Justin回复。</p>
+<p align="left">我去给这个解答写代码。然后Justin让我提供一套测试用例。我们讨论的所有测试用例似乎也挺好。</p>
+<p align="left">“你有问题问我吗？”Justin问我。“我做的怎么样？”“还算不错。你的方法用了两次遍历，但有一个更有意思的方法只用一次遍历。”</p>
+<p align="left">然后我们聊了一小会关于在twitter的生活。</p>
+<p align="left">我挂掉电话的那一秒我意识到了我的答案是错的。</p>
+<p align="left">想想这个输入：</p>
+<p align="left"><img alt="" src="http://ww1.sinaimg.cn/mw690/7cc829d3gw1ea56plq87ij209n04x74b.jpg" /></p>
+<p align="left">我的答案计算的是极大值之间的水，就像这样。</p>
+<p align="left"><img alt="" src="http://ww3.sinaimg.cn/mw690/7cc829d3gw1ea56pkka4bj209n04xglw.jpg" /></p>
+<p align="left">但是答案应该是在两个高塔之间只有一池水：</p>
+<p align="left"><img alt="" src="http://ww2.sinaimg.cn/mw690/7cc829d3gw1ea56pl3x3yj209n04xaaf.jpg" /></p>
+<p align="left">第二天我把这个问题给我的技术支持看，他是理论计算科学的博士生。40分钟之后他还是卡在这个问题上。</p>
+<p align="left">今天早上我带着口臭和灵光一闪起床。答案是简单而漂亮的。</p>
+<p align="left">现在我扪心自问：在这件事我学到了什么？客观地说——不多。对于面试官没有问我正确的问题来引导我向正确的方向思考，我很难过。当我的解答实际上不正确的时候，我不知道为什么Justin告诉我“这应该有用”。我知道解答中的问题应该在他要求的测试用例中显示出来，但既然我在思考算法的时候没有考虑到，我就不可能想到要测试它。</p>
+<p align="left">我跟亚马逊签了合约明年夏天上班，并且对此我很兴奋。同时，我也禁不住问一句“如果我通过了面试会怎么样？”</p>
+<p align="left"><strong>这里是答案的概要。</strong></p>
+<p align="left">逻辑如下：</p>
+<p align="left">如果我们从左至右遍历列表，每个下标水的量最多是到现在为止最大的数。这表示如果我们已知右边有相等或更大的，我们可以知道存下的水有多少。反向遍历的时候也一样：如果我们知道左边有比右边最大的数更大的，我们装水是毫无问题的。</p>
+<p align="left">基于这个想法，一个解决方法是：先找到最大值，从左遍历到最大值，然后从右遍历到最大值。这个方法需要两次遍历：一次找到最大值，另一次分成了两个子遍历。</p>
+<p>一次遍历的方法通过两端的指针相向移动避免了寻找最大值。如果（左指针找到的左指针以左的最大值）小于（右指针找到右指针以右的最大值），将左指针向右移动一位。否则右指针向左移动一位。重复过程直到两个指针相遇。（解释起来很麻烦，但是代码很简单）</p>
+<p>&nbsp;</p>
+<p><span style="color: #008000;"><strong>译者注：</strong></span></p>
+<p>这是我用python实现的作者的最终算法：</p>
+<p><a href="https://github.com/CuGBabyBeaR/Interview-questions/tree/master/twitter-puddle">https://github.com/CuGBabyBeaR/Interview-questions/tree/master/twitter-puddle</a></p>
+<pre class="brush: python; gutter: true">def calculate(testcase):
+    p_l = 0
+    p_r = len(testcase) - 1
+    max_l = testcase[p_l]
+    max_r = testcase[p_r]
+
+    volume = 0
+    while p_r &gt; p_l :
+        if max_l &lt; max_r:
+            p_l = p_l + 1
+            if testcase[p_l] &gt;= max_l:
+                max_l = testcase[p_l]
+            else:
+                volume = volume + (max_l - testcase[p_l])
+                pass
+            pass
+        else:
+            p_r = p_r - 1
+            if testcase[p_r] &gt;= max_r:
+                max_r = testcase[p_r]
+            else:
+                volume = volume + (max_r - testcase[p_r])
+                pass
+            pass
+        pass
+    pass
+
+    return volume</pre>
+<p>用了3个不同的测试用例，其中两个是文中给出的：</p>
+<pre class="brush: python; gutter: true">testcase_1 = [2,5,1,2,3,4,7,7,6]
+testcase_2 = [2,5,1,3,1,2,1,7,7,6]
+testcase_3 = [6,1,4,6,7,5,1,6,4]
+print &quot;case %s total volume : %s &quot; % (testcase_1, calculate(testcase_1))
+print &quot;case %s total volume : %s &quot; % (testcase_2, calculate(testcase_2))
+print &quot;case %s total volume : %s &quot; % (testcase_3, calculate(testcase_3))</pre>
+<p>输出如下：</p>
+<pre class="brush: text; gutter: true">D:\PyWorkspace\pool&gt;pool.py
+case [2, 5, 1, 2, 3, 4, 7, 7, 6] total volume : 10
+case [2, 5, 1, 3, 1, 2, 1, 7, 7, 6] total volume : 17
+case [6, 1, 4, 6, 7, 5, 1, 6, 4] total volume : 13</pre>
+
+<br/>
+
+<div id="ad1">
+<script type="text/javascript">
+google_ad_client = "ca-pub-7056282119617872";
+google_ad_slot = "3451540426";
+google_ad_width = 300;
+google_ad_height = 250;
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<!-- p><a target="_blank" rel="nofollow" href="http://www.hi-vps.com/?utm_source=jobbole.com"><img src="http://ww2.sinaimg.cn/large/63918611gw1e8xk7amtjlj20go04g3z7.jpg"></img></a></p -->
+	
+<br/><br/>
+
+原文链接： <a target='_blank' ref='nofollow' href='http://qandwhat.apps.runkite.com/i-failed-a-twitter-interview/'>runkite</a>&nbsp;&nbsp;&nbsp;翻译： <a href='http://blog.jobbole.com'> 伯乐在线 </a> - <a href='http://blog.jobbole.com/author/cugbabyebar/'>CuGBabyBeaR</a><br/>译文链接： <a href='http://blog.jobbole.com/50705/'>http://blog.jobbole.com/50705/</a><br/>[ <span style='color:#ff0000'><b>转载必须在正文中标注并保留原文链接、译文链接和译者等信息。</b></span>]<br/><br/>
+	</div>
+	<!-- END .entry -->
+
+
+
+
+
+
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_24x24">
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_weixin"></a>
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_renren"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_t163"></a>
+<a class="jiathis_button_tsohu"></a>
+<a class="jiathis_button_douban"></a>
+<a class="jiathis_button_fb"></a>
+<a class="jiathis_button_googleplus"></a>
+<a class="jiathis_button_twitter"></a>
+<a class="jiathis_button_readitlater"></a>
+<a class="jiathis_button_evernote"></a>
+<a class="jiathis_button_ydnote"></a>
+<a href="http://www.jiathis.com/share?uid=1745061" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	summary:"",
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1745061" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<br/><br/>
+
+
+</div>
+<!-- END .post -->		
+	<!-- BEGIN #author-bio -->
+
+<div id="author-bio">
+	
+	<h3 class="widget-title">关于作者： <a href="http://blog.jobbole.com/author/cugbabyebar/">CuGBabyBeaR</a></h3>
+	<div class="alignleft">
+		<a href="http://blog.jobbole.com/author/cugbabyebar/">
+			<img src="http://gravatar.com/avatar/837834393dcc6006035403b5df2ba9c0?d=mm&amp;s=60&amp;r=G" class="avatar user-9327-avatar avatar-60 photo" width="60" height="60" alt="CuGBabyBeaR 的头像" />		</a>
+	</div>
+	<p>野生业余程序员
+搞搞Android 玩玩前端 仅此而已
+（新浪微博：<a href="http://weibo.com/duoz">@CuGBabyBeaR</a>）</p>
+	<p><a style="text-decoration: none;" href="http://blog.jobbole.com/author/cugbabyebar/">查看CuGBabyBeaR的更多文章 >> </a></h3></p>
+	<div class="clear"></div>
+	
+</div>
+
+<!-- END #author-bio -->	
+	
+<div class="wp_rp_wrap  wp_rp_plain" id="wp_rp_first"><div class="wp_rp_content"><h3 class="related_post_title">相关文章</h3><ul class="related_post wp_rp" style="visibility: visible"><li ><a href="http://blog.jobbole.com/46603/" class="wp_rp_title">我拒绝参加你们的技术面试</a></li><li ><a href="http://blog.jobbole.com/40040/" class="wp_rp_title">坚持编程：如何找到一份工程师工作</a></li><li ><a href="http://blog.jobbole.com/36412/" class="wp_rp_title">倒掉鞋里的沙</a></li><li ><a href="http://blog.jobbole.com/303/" class="wp_rp_title">从Twitter办公室变化看其进化史</a></li><li ><a href="http://blog.jobbole.com/46769/" class="wp_rp_title">面霸的八月：小米面试记</a></li><li ><a href="http://blog.jobbole.com/38819/" class="wp_rp_title">一位张江男曲折的出国梦</a></li><li ><a href="http://blog.jobbole.com/41874/" class="wp_rp_title">海外实习面试记</a></li><li ><a href="http://blog.jobbole.com/47064/" class="wp_rp_title">他只得了1%，我们不能雇用他</a></li><li ><a href="http://blog.jobbole.com/39650/" class="wp_rp_title">Steve Yegge：Google面试秘籍</a></li><li ><a href="http://blog.jobbole.com/46355/" class="wp_rp_title">Twitter发送峰值创新高，工程师在背后做了哪些改进</a></li></ul></div></div>
+			
+	
+<!-- BEGIN #respond -->
+<div id="respond">
+
+	<h3 class="widget-title">发表评论</h3>
+	
+	<!-- BEGIN .cancel-comment-reply -->
+	<p class="cancel-comment-reply">
+		
+		<a rel="nofollow" id="cancel-comment-reply-link" href="/50705/#respond" style="display:none;">点击这里取消回复。</a>		
+	</p>
+	<!-- END .cancel-comment-reply -->
+
+		
+	<!-- BEGIN #comment-form -->
+	<form action="http://blog.jobbole.com/wp-comments-post.php" method="post" id="comment-form">
+		
+		<fieldset>
+		
+			<legend class="none">Comment form</legend>
+			
+			<!-- BEGIN .container -->
+			<div class="container">
+			
+							
+				<div class="grid-4 margin-20">
+					<label for="author">Name<span class="red">*</span></label>
+				</div>
+				
+				<div class="grid-4 margin-20">
+					<div class="input-wrapper"><input type="text" name="author" id="author" value="" tabindex="1" size="30" class="required" placeholder="姓名" /></div>
+				</div>
+				<div class="clear"></div>
+				
+				<div class="grid-4 margin-20">
+					<label for="email">邮箱<span class="red">*</span></label>
+				</div>
+				
+				<div class="grid-4 margin-20">
+					<div class="input-wrapper"><input type="email" name="email" id="email" value="" tabindex="2" size="30" class="required email" placeholder="请填写邮箱" /></div>
+				</div>
+				<div class="clear"></div>
+				
+				<div class="grid-4 margin-20">
+					<label for="url">网站 (请以 http://开头)</label>
+				</div>
+				
+				<div class="grid-4 margin-20">
+					<div class="input-wrapper"><input type="url" name="url" id="url" value="" tabindex="3" size="30" placeholder="请填写网站地址" /></div>
+				</div>
+				<div class="clear"></div>
+				
+								
+				<div class="grid-8 margin-20">
+					<label for="comment" class="none margin-20">评论内容<span class="red">*</span></label>
+					<div class="input-wrapper"><textarea name="comment" id="comment" rows="20" cols="30" class="required" tabindex="4" placeholder="请填写评论内容" ></textarea></div>
+				</div>
+				<div class="clear"></div>
+				
+			</div>
+			<!-- END .container -->
+			
+			<p>(<span class="red">*</span>) 表示必填项</p>
+			<p><div class="submit-wrapper"><a id="comment-form-submit" class="submit">提交评论</a></div></p>
+			<input type='hidden' name='comment_post_ID' value='50705' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+			<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="3a31799ebb" /></p>			
+		</fieldset>
+		
+	</form>
+	<!-- END #comment-form -->
+	
+	
+</div>
+<!-- END #respond -->
+
+	<h3 id="comments" class="widget-title">32 条评论</h3>
+	
+	<!-- BEGIN .commentlist -->
+	<ol class="commentlist">
+	
+				<li class="comment even thread-even depth-1 parent" id="comment-27192">
+				<div id="div-comment-27192" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/98a90fb4fdb058fb169be6ee7cfc5ace?s=30&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">LL</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27192">
+			2013/11/01 11:28 上午</a>		</div>
+
+		<p>卤煮最后给的答案也是有问题的吧？<br />
+我觉得应该以max为分界. f(1,n) = f(1,max -1) + f(max +1 ,n);<br />
+这是一个divide and conquer.</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27192" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27192', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27192-up" style="font-size:12px; color:#009933;">1</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27192" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27192', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27192-down" style="font-size:12px; color:#990033;">3</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27192#respond' onclick='return addComment.moveForm("div-comment-27192", "27192", "respond", "50705")'>回复</a>		</div>
+				</div>
+		<ul class='children'>
+		<li class="comment byuser comment-author-cugbabyebar bypostauthor odd alt depth-2" id="comment-27198">
+				<div id="div-comment-27198" class="comment-body">
+				<div class="comment-author vcard">
+		<img src="http://gravatar.com/avatar/837834393dcc6006035403b5df2ba9c0?d=mm&amp;s=30&amp;r=G" class="avatar user-9327-avatar avatar-30 photo" width="30" height="30" alt="CuGBabyBeaR 的头像" />		<cite class="fn"><a href='http://www.jobbole.com/members/cugbabyebar/' rel='external nofollow' class='url'>CuGBabyBeaR</a></cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27198">
+			2013/11/01 1:20 下午</a>		</div>
+
+		<p>那还是需要先找到max啊<br />
+于是就是两次遍历 正如作者在最后提供的第一个答案<br />
+一次遍历的算法你再琢磨一下就明白了</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27198" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27198', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27198-up" style="font-size:12px; color:#009933;">1</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27198" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27198', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27198-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27198#respond' onclick='return addComment.moveForm("div-comment-27198", "27198", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+		<li class="comment even depth-2" id="comment-27326">
+				<div id="div-comment-27326" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/0970b0a8483d97df8bc43b466962dfbc?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">jason</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27326">
+			2013/11/03 11:47 上午</a>		</div>
+
+		<p>不用，没接触过python竟然看懂了，双向遍历，很巧妙</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27326" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27326', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27326-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27326" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27326', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27326-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27326#respond' onclick='return addComment.moveForm("div-comment-27326", "27326", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-27197">
+				<div id="div-comment-27197" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/b2bb317908c01a7108742ddd5838bfd8?s=30&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn"><a href='https://github.com/jxzhuge12' rel='external nofollow' class='url'>jxzhuge12</a></cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27197">
+			2013/11/01 1:17 下午</a>		</div>
+
+		<p>虽然没怎么看懂楼主怎么做的，但是自己觉得蛮好玩的就编了一个。<br />
+放个链接吧。<br />
+<a href="https://github.com/jxzhuge12/interview" rel="nofollow">https://github.com/jxzhuge12/interview</a><br />
+大致思想已经在README文件里说明了</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27197" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27197', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27197-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27197" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27197', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27197-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27197#respond' onclick='return addComment.moveForm("div-comment-27197", "27197", "respond", "50705")'>回复</a>		</div>
+				</div>
+		<ul class='children'>
+		<li class="comment byuser comment-author-cugbabyebar bypostauthor even depth-2" id="comment-27204">
+				<div id="div-comment-27204" class="comment-body">
+				<div class="comment-author vcard">
+		<img src="http://gravatar.com/avatar/837834393dcc6006035403b5df2ba9c0?d=mm&amp;s=30&amp;r=G" class="avatar user-9327-avatar avatar-30 photo" width="30" height="30" alt="CuGBabyBeaR 的头像" />		<cite class="fn"><a href='http://www.jobbole.com/members/cugbabyebar/' rel='external nofollow' class='url'>CuGBabyBeaR</a></cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27204">
+			2013/11/01 4:04 下午</a>		</div>
+
+		<p>你的算法似乎是作者在面试时提交的方法的改进版?<br />
+就有点..<br />
+如果你更习惯c++的话&#8230;我也写了一个c++的版本<br />
+<a href="https://github.com/CuGBabyBeaR/Interview-questions/" rel="nofollow">https://github.com/CuGBabyBeaR/Interview-questions/</a></p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27204" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27204', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27204-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27204" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27204', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27204-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27204#respond' onclick='return addComment.moveForm("div-comment-27204", "27204", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment byuser comment-author-cugbabyebar bypostauthor odd alt thread-even depth-1" id="comment-27205">
+				<div id="div-comment-27205" class="comment-body">
+				<div class="comment-author vcard">
+		<img src="http://gravatar.com/avatar/837834393dcc6006035403b5df2ba9c0?d=mm&amp;s=30&amp;r=G" class="avatar user-9327-avatar avatar-30 photo" width="30" height="30" alt="CuGBabyBeaR 的头像" />		<cite class="fn"><a href='http://www.jobbole.com/members/cugbabyebar/' rel='external nofollow' class='url'>CuGBabyBeaR</a></cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27205">
+			2013/11/01 4:14 下午</a>		</div>
+
+		<p>烦请更新一下文中的代码 昨晚的代码有点冗繁<br />
+代码已上传至Github: <a href="https://github.com/CuGBabyBeaR/Interview-questions/tree/master/twitter-puddle" rel="nofollow">https://github.com/CuGBabyBeaR/Interview-questions/tree/master/twitter-puddle</a></p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27205" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27205', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27205-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27205" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27205', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27205-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27205#respond' onclick='return addComment.moveForm("div-comment-27205", "27205", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-27208">
+				<div id="div-comment-27208" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/9c4bbc0afbe1fd64062ffe2b09f68247?s=30&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">Kation</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27208">
+			2013/11/01 5:25 下午</a>		</div>
+
+		<pre class="brush: cpp; gutter: true">int[] walls = new int[] { 2, 5, 1, 2, 3, 4, 7, 7, 6 };
+            int c = 0;
+            int t = 0;
+            int tt = 0;
+            for (int i = 1; i = walls[c])
+                {
+                    t += tt;
+                    tt = 0;
+                    c = i;
+                }
+                else
+                    tt += walls[c] - walls[i];
+            }
+            tt -= (walls[c] - walls[walls.Length - 1]) * (walls.Length  - c - 2);
+            t += tt;
+
+return t;</pre>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27208" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27208', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27208-up" style="font-size:12px; color:#009933;">1</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27208" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27208', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27208-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27208#respond' onclick='return addComment.moveForm("div-comment-27208", "27208", "respond", "50705")'>回复</a>		</div>
+				</div>
+		<ul class='children'>
+		<li class="comment odd alt depth-2 parent" id="comment-27211">
+				<div id="div-comment-27211" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/9c4bbc0afbe1fd64062ffe2b09f68247?s=30&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">Kation</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27211">
+			2013/11/01 5:26 下午</a>		</div>
+
+		<p>擦，漏了一种可能性……</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27211" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27211', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27211-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27211" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27211', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27211-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27211#respond' onclick='return addComment.moveForm("div-comment-27211", "27211", "respond", "50705")'>回复</a>		</div>
+				</div>
+		<ul class='children'>
+		<li class="comment even depth-3 parent" id="comment-27364">
+				<div id="div-comment-27364" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/b0c35cbfc31e4abe91b16f170276c0d1?s=30&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">ped</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27364">
+			2013/11/04 10:43 上午</a>		</div>
+
+		<p>我也觉得漏了一种可能。如果数组是3,1,1,4,1,2,3,3,6这样的呢</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27364" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27364', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27364-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27364" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27364', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27364-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27364#respond' onclick='return addComment.moveForm("div-comment-27364", "27364", "respond", "50705")'>回复</a>		</div>
+				</div>
+		<ul class='children'>
+		<li class="comment odd alt depth-4" id="comment-27628">
+				<div id="div-comment-27628" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/80db30013f768c2fc7865f471f32e452?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">esyrt</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27628">
+			2013/11/09 4:58 下午</a>		</div>
+
+		<p>注意題意，題意不是求水最多的兩個坑，而是所有坑中的水相加之和。</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27628" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27628', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27628-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27628" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27628', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27628-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27628#respond' onclick='return addComment.moveForm("div-comment-27628", "27628", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment even depth-3" id="comment-27588">
+				<div id="div-comment-27588" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/5e8efb2c05aa58cb0f1c5761af41e9a6?s=30&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">bighammer</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27588">
+			2013/11/08 2:38 下午</a>		</div>
+
+		<p>没有漏，这个算法很巧妙</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27588" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27588', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27588-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27588" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27588', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27588-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27588#respond' onclick='return addComment.moveForm("div-comment-27588", "27588", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+</ul>
+</li>
+		<li class="comment odd alt thread-even depth-1" id="comment-27223">
+				<div id="div-comment-27223" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/62f17838a9c659a5bba9258ff0dd65f6?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">WYD</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27223">
+			2013/11/01 9:37 下午</a>		</div>
+
+		<p>很好的算法，首先求得两边各自的第一个极大值，然后根据那个极大值大确定遍历方向，顺便更新最大值</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27223" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27223', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27223-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27223" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27223', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27223-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27223#respond' onclick='return addComment.moveForm("div-comment-27223", "27223", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-27244">
+				<div id="div-comment-27244" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/6ff2460303e27a3b1e8ac859ec8e251f?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn"><a href='http://rabbit.com' rel='external nofollow' class='url'>rabbit</a></cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27244">
+			2013/11/02 11:19 上午</a>		</div>
+
+		<p>赞，左边的一旦高于右边的就由右边决定蓄水量，木桶原理呀。。</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27244" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27244', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27244-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27244" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27244', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27244-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27244#respond' onclick='return addComment.moveForm("div-comment-27244", "27244", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-chenxin3676sina-com odd alt thread-even depth-1 parent" id="comment-27328">
+				<div id="div-comment-27328" class="comment-body">
+				<div class="comment-author vcard">
+		<img src="http://gravatar.com/avatar/90ea8ab0dc96035055147bb193d93c03?d=mm&amp;s=30&amp;r=G" class="avatar user-11283-avatar avatar-30 photo" width="30" height="30" alt="Younglove 的头像" />		<cite class="fn"><a href='http://www.jobbole.com/members/chenxin3676sina-com/' rel='external nofollow' class='url'>Younglove</a></cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27328">
+			2013/11/03 3:53 下午</a>		</div>
+
+		<p>look</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27328" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27328', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27328-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27328" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27328', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27328-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27328#respond' onclick='return addComment.moveForm("div-comment-27328", "27328", "respond", "50705")'>回复</a>		</div>
+				</div>
+		<ul class='children'>
+		<li class="comment even depth-2" id="comment-27365">
+				<div id="div-comment-27365" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/5111da1c2671d4bc9bb4e292d01c047b?s=30&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">yin</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27365">
+			2013/11/04 10:59 上午</a>		</div>
+
+		<p>这个算法是错误的</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27365" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27365', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27365-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27365" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27365', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27365-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27365#respond' onclick='return addComment.moveForm("div-comment-27365", "27365", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-27366">
+				<div id="div-comment-27366" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/b4caa41abcfa0f0c27c080e3c92619bf?s=30&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">piecehealth</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27366">
+			2013/11/04 11:56 上午</a>		</div>
+
+		<p>Ruby版 12行<br />
+https://gist.github.com/piecehealth/7297766</p>
+<pre class="brush: ruby; gutter: true">
+def how_many_water arr
+	how_many = 0
+	arr.each_with_index do |height, idx|
+		next if idx == 0 or idx == arr.size - 1
+		l_bound, r_bound = arr[0...idx].max, arr[(idx + 1)..(arr.size - 1)].max
+		if l_bound &gt; height &amp;&amp; r_bound &gt; height
+			bound = l_bound &lt; r_bound ? l_bound : r_bound
+			how_many += bound - height
+		end
+	end
+	how_many
+end
+</pre>
+<pre class="brush: text; gutter: true">
+t1 = [2, 5, 1, 2, 3, 4, 7, 7 ,6]
+t2 = [2, 5, 1, 3, 1, 2, 1, 7, 7, 6]
+t3 = [6, 1, 4, 6, 7, 5, 1, 6, 4]
+p how_many_water t1
+p how_many_water t2
+p how_many_water t3
+</pre>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27366" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27366', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27366-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27366" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27366', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27366-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27366#respond' onclick='return addComment.moveForm("div-comment-27366", "27366", "respond", "50705")'>回复</a>		</div>
+				</div>
+		<ul class='children'>
+		<li class="comment byuser comment-author-cugbabyebar bypostauthor even depth-2 parent" id="comment-27374">
+				<div id="div-comment-27374" class="comment-body">
+				<div class="comment-author vcard">
+		<img src="http://gravatar.com/avatar/837834393dcc6006035403b5df2ba9c0?d=mm&amp;s=30&amp;r=G" class="avatar user-9327-avatar avatar-30 photo" width="30" height="30" alt="CuGBabyBeaR 的头像" />		<cite class="fn"><a href='http://www.jobbole.com/members/cugbabyebar/' rel='external nofollow' class='url'>CuGBabyBeaR</a></cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27374">
+			2013/11/04 2:38 下午</a>		</div>
+
+		<p>很简练 但是&#8230;<br />
+不太懂Ruby 不过调用数组切片的max方法而不是自己维护一个max值<br />
+会不会导致时间复杂度从O(n)提高到O(nlog(n))?</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27374" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27374', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27374-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27374" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27374', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27374-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27374#respond' onclick='return addComment.moveForm("div-comment-27374", "27374", "respond", "50705")'>回复</a>		</div>
+				</div>
+		<ul class='children'>
+		<li class="comment odd alt depth-3" id="comment-27383">
+				<div id="div-comment-27383" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/b4caa41abcfa0f0c27c080e3c92619bf?s=30&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">piecehealth</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27383">
+			2013/11/04 4:40 下午</a>		</div>
+
+		<p>是的，这种写法执行不是很效率，都消耗在max这个方法上了，楼主的解法是最优的，只遍历一遍就解决了。</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27383" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27383', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27383-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27383" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27383', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27383-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27383#respond' onclick='return addComment.moveForm("div-comment-27383", "27383", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+</ul>
+</li>
+		<li class="comment even thread-even depth-1 parent" id="comment-27368">
+				<div id="div-comment-27368" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/0de16031075896375d1bb115c825870d?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">kidd</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27368">
+			2013/11/04 12:46 下午</a>		</div>
+
+		<p>试试test case<br />
+【10,9,8,7,6,5,4,3,2,1】</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27368" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27368', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27368-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27368" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27368', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27368-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27368#respond' onclick='return addComment.moveForm("div-comment-27368", "27368", "respond", "50705")'>回复</a>		</div>
+				</div>
+		<ul class='children'>
+		<li class="comment byuser comment-author-cugbabyebar bypostauthor odd alt depth-2" id="comment-27372">
+				<div id="div-comment-27372" class="comment-body">
+				<div class="comment-author vcard">
+		<img src="http://gravatar.com/avatar/837834393dcc6006035403b5df2ba9c0?d=mm&amp;s=30&amp;r=G" class="avatar user-9327-avatar avatar-30 photo" width="30" height="30" alt="CuGBabyBeaR 的头像" />		<cite class="fn"><a href='http://www.jobbole.com/members/cugbabyebar/' rel='external nofollow' class='url'>CuGBabyBeaR</a></cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27372">
+			2013/11/04 2:04 下午</a>		</div>
+
+		<p>case [2, 5, 1, 2, 3, 4, 7, 7, 6] total volume : 10<br />
+case [2, 5, 1, 3, 1, 2, 1, 7, 7, 6] total volume : 17<br />
+case [6, 1, 4, 6, 7, 5, 1, 6, 4] total volume : 13<br />
+case [10, 9, 8, 7, 6, 5, 4, 3, 2, 1] total volume : 0</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27372" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27372', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27372-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27372" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27372', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27372-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27372#respond' onclick='return addComment.moveForm("div-comment-27372", "27372", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-27370">
+				<div id="div-comment-27370" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/c7d46fe4fcd1f04bdca7ecb1f4ecae65?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">x</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27370">
+			2013/11/04 1:17 下午</a>		</div>
+
+		<p>“如果我们从左至右遍历列表，每个下标水的量最多是到现在为止最大的数。”<br />
+他这里是否表述有误：在计算时，需要考虑左侧所经历过的最大值。这样在有多个凹坑的时候，按照左侧经历过的最大值计算积水量。</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27370" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27370', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27370-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27370" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27370', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27370-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27370#respond' onclick='return addComment.moveForm("div-comment-27370", "27370", "respond", "50705")'>回复</a>		</div>
+				</div>
+		<ul class='children'>
+		<li class="comment byuser comment-author-cugbabyebar bypostauthor odd alt depth-2" id="comment-27376">
+				<div id="div-comment-27376" class="comment-body">
+				<div class="comment-author vcard">
+		<img src="http://gravatar.com/avatar/837834393dcc6006035403b5df2ba9c0?d=mm&amp;s=30&amp;r=G" class="avatar user-9327-avatar avatar-30 photo" width="30" height="30" alt="CuGBabyBeaR 的头像" />		<cite class="fn"><a href='http://www.jobbole.com/members/cugbabyebar/' rel='external nofollow' class='url'>CuGBabyBeaR</a></cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27376">
+			2013/11/04 2:45 下午</a>		</div>
+
+		<p>诶?我感觉这样翻译没问题啊<br />
+在前边从左侧遍历的语境下&#8221;到现在为止最大的数&#8221; 难道不就是 &#8220;到现在为止左侧所经历过的最大值&#8221;</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27376" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27376', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27376-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27376" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27376', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27376-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27376#respond' onclick='return addComment.moveForm("div-comment-27376", "27376", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment even thread-even depth-1 parent" id="comment-27371">
+				<div id="div-comment-27371" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/92c4508eab8deb6557579d782200d14b?s=30&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">Lithos</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27371">
+			2013/11/04 1:57 下午</a>		</div>
+
+		<p>Java版本的两个不同实现：<br />
+oneAndhalf是我自己想的，one是根据提示写的。</p>
+<pre class="brush: java; gutter: true">
+public static void main(String[] args) {
+		int walls[] = new int[] { 2, 5, 1, 3, 1, 2, 1, 7, 7, 6,8 };
+
+		one(walls);
+
+		oneAndhalf(walls);
+	}
+
+	private static void one(int[] walls) {
+		int left = 0;
+		int right = walls.length - 1;
+
+		int leftHighestWall = left;
+		int rightHighestWall = right;
+
+		int totalWater = 0;
+
+		while (left != right) {
+			if (walls[left]  walls[leftHighestWall]) {
+					totalWater += calcWater(leftHighestWall, left, walls);
+					leftHighestWall = left;
+				}
+			} else {
+				right--;
+				if (walls[right] &gt; walls[rightHighestWall]) {
+					totalWater += calcWater(right, rightHighestWall, walls);
+					rightHighestWall = right;
+				}
+			}
+		}
+		System.out.println(totalWater);
+	}
+
+	private static void oneAndhalf(int[] walls) {
+		int firstHighestWall = 0;
+		int totalWater = 0;
+		for (int i = 1; i  walls[firstHighestWall]) {
+				totalWater += calcWater(firstHighestWall, i, walls);
+				firstHighestWall = i;
+			}
+		}
+
+		int lastHighestWall = walls.length - 1;
+		for (int i = walls.length - 1; i &gt;= firstHighestWall; i--) {
+			if (walls[i] &gt; walls[lastHighestWall]) {
+				totalWater += calcWater(i, lastHighestWall, walls);
+				lastHighestWall = i;
+			}
+		}
+
+		System.out.println(totalWater);
+	}
+
+	private static int calcWater(int begin, int end, int walls[]) {
+		int lowerWallHeight = Math.min(walls[begin], walls[end]);
+		int total = 0;
+		for (int i = begin + 1; i &lt; end; i++) {
+			total += lowerWallHeight - walls[i];
+		}
+		return total;
+	}
+</pre>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27371" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27371', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27371-up" style="font-size:12px; color:#009933;">1</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27371" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27371', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27371-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27371#respond' onclick='return addComment.moveForm("div-comment-27371", "27371", "respond", "50705")'>回复</a>		</div>
+				</div>
+		<ul class='children'>
+		<li class="comment byuser comment-author-cugbabyebar bypostauthor odd alt depth-2" id="comment-27375">
+				<div id="div-comment-27375" class="comment-body">
+				<div class="comment-author vcard">
+		<img src="http://gravatar.com/avatar/837834393dcc6006035403b5df2ba9c0?d=mm&amp;s=30&amp;r=G" class="avatar user-9327-avatar avatar-30 photo" width="30" height="30" alt="CuGBabyBeaR 的头像" />		<cite class="fn"><a href='http://www.jobbole.com/members/cugbabyebar/' rel='external nofollow' class='url'>CuGBabyBeaR</a></cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27375">
+			2013/11/04 2:40 下午</a>		</div>
+
+		<p>嗯&#8230;你对这个算法理解跟我一开始写的想法一样 哈哈<br />
+其实可以更简单&#8230;</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27375" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27375', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27375-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27375" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27375', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27375-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27375#respond' onclick='return addComment.moveForm("div-comment-27375", "27375", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+		<li class="comment even depth-2" id="comment-27480">
+				<div id="div-comment-27480" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/2800eefe5d54c72b2cdd9eb47e819923?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">starkjavac</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27480">
+			2013/11/06 10:02 上午</a>		</div>
+
+		<p>你这个代码编辑器 我怎么没看到哇 ~</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27480" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27480', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27480-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27480" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27480', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27480-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27480#respond' onclick='return addComment.moveForm("div-comment-27480", "27480", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-27450">
+				<div id="div-comment-27450" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/0f17bba3fa806e0e58e504782d030d08?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">乱世闲人</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27450">
+			2013/11/05 3:21 下午</a>		</div>
+
+		<p>先找最大值，再次大值，次大值依次减去两数之间的数字得到水量，然后在数组中去掉次大值和两数之间的数字，在新数组里找次大值，重复上一过程。</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27450" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27450', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27450-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27450" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27450', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27450-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27450#respond' onclick='return addComment.moveForm("div-comment-27450", "27450", "respond", "50705")'>回复</a>		</div>
+				</div>
+		<ul class='children'>
+		<li class="comment even depth-2" id="comment-27453">
+				<div id="div-comment-27453" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/876418d87d9bbe8dec74fcedb366b4e8?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">曙光旋冰</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27453">
+			2013/11/05 4:41 下午</a>		</div>
+
+		<p>这样最坏情况是O(nlgn)了吧？</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27453" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27453', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27453-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27453" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27453', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27453-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27453#respond' onclick='return addComment.moveForm("div-comment-27453", "27453", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment odd alt thread-even depth-1" id="comment-27479">
+				<div id="div-comment-27479" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/2800eefe5d54c72b2cdd9eb47e819923?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">starkjavac</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27479">
+			2013/11/06 10:00 上午</a>		</div>
+
+		<pre class="brush: java; gutter: true">
+/**
+*附上java实现
+*/
+public class Volume {
+
+	public int getVolume(int[] arr) {
+		int volume = 0;
+		int max_l = arr[0];
+		int p_l = 0;
+		int p_r = arr.length - 1;
+		int max_r = arr[p_r];
+
+		while (p_l &lt; p_r) {
+			if (max_l &lt; max_r) {
+				p_l = p_l + 1;
+				if (max_l &lt; arr[p_l]) {
+					max_l = arr[p_l];
+				} else {
+
+					volume = volume + max_l - arr[p_l];
+
+				}
+			} else {
+				p_r = p_r - 1;
+				if (max_r &lt; arr[p_r]) {
+					max_r = arr[p_r];
+				} else {
+
+					volume = volume + max_r - arr[p_r];
+				}
+			}
+		}
+		return volume;
+	}
+
+}
+</pre>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27479" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27479', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27479-up" style="font-size:12px; color:#009933;">2</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27479" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27479', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27479-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27479#respond' onclick='return addComment.moveForm("div-comment-27479", "27479", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-27762">
+				<div id="div-comment-27762" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/e37e2f68d78484d841f328d397a57af4?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">guest</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27762">
+			2013/11/13 6:13 上午</a>		</div>
+
+		<p>twitter面试这么简单。。。</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27762" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27762', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27762-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27762" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27762', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27762-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27762#respond' onclick='return addComment.moveForm("div-comment-27762", "27762", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-27865">
+				<div id="div-comment-27865" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/b8b9e914963832d1b9ff3b7c66c44548?s=30&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">lw</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27865">
+			2013/11/15 5:47 下午</a>		</div>
+
+		<p>2, 5, 1, 2, 3, 4, 7, 1, 6这种情况考虑了吗？</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27865" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27865', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27865-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27865" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27865', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27865-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27865#respond' onclick='return addComment.moveForm("div-comment-27865", "27865", "respond", "50705")'>回复</a>		</div>
+				</div>
+		<ul class='children'>
+		<li class="comment byuser comment-author-cugbabyebar bypostauthor even depth-2" id="comment-27869">
+				<div id="div-comment-27869" class="comment-body">
+				<div class="comment-author vcard">
+		<img src="http://gravatar.com/avatar/837834393dcc6006035403b5df2ba9c0?d=mm&amp;s=30&amp;r=G" class="avatar user-9327-avatar avatar-30 photo" width="30" height="30" alt="CuGBabyBeaR 的头像" />		<cite class="fn"><a href='http://www.jobbole.com/members/cugbabyebar/' rel='external nofollow' class='url'>CuGBabyBeaR</a></cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-27869">
+			2013/11/15 11:16 下午</a>		</div>
+
+		<p>不妨自己试试？</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-27869" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('27869', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-27869-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-27869" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('27869', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-27869-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=27869#respond' onclick='return addComment.moveForm("div-comment-27869", "27869", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-28005">
+				<div id="div-comment-28005" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/a70bd8817762138a91c93402db33df34?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' />		<cite class="fn">Ezio</cite> <span class="says">说道：</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.jobbole.com/50705/#comment-28005">
+			2013/11/18 2:05 下午</a>		</div>
+
+		<p>这好像是LeetCode上的原题呀</p>
+<p> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-28005" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_up.png" alt="Thumb up" onclick="javascript:ckratingKarma('28005', 'add', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_');" title="赞同" /> <span id="karma-28005-up" style="font-size:12px; color:#009933;">0</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-28005" src="http://blog.jobbole.com/wp-content/plugins/comment-rating/images/1_14_down.png" alt="Thumb down" onclick="javascript:ckratingKarma('28005', 'subtract', 'blog.jobbole.com/wp-content/plugins/comment-rating/', '1_14_')" title="反对" /> <span id="karma-28005-down" style="font-size:12px; color:#990033;">0</span></p>
+		<div class="reply">
+		<a class='comment-reply-link' href='/50705/?replytocom=28005#respond' onclick='return addComment.moveForm("div-comment-28005", "28005", "respond", "50705")'>回复</a>		</div>
+				</div>
+		</li>
+	
+	</ol>
+	<!-- END .commentlist -->
+
+		
+ 
+
+		
+				
+	<!-- BEGIN .navigation -->
+	<div class="navigation margin-20">
+	
+		<div class="alignleft"><a href="http://blog.jobbole.com/50708/" rel="prev">&laquo; 程序员最头疼的事：命名</a></div>
+		<div class="alignright"><a href="http://blog.jobbole.com/50108/" rel="next">看国外开发者如何检验并恢复损坏的git数据文件 &raquo;</a></div>
+		<div class="clear"></div>
+
+	</div>
+	<!-- END .navigation -->
+	
+		
+</div>
+<!-- END .grid-8 -->
+
+<!-- BEGIN #sidebar -->
+<div id="sidebar" class="grid-4">
+
+	<div id="search-3" class="widget widget_search"><!-- BEGIN #searchform -->
+<form method="get" id="searchform" action="http://blog.jobbole.com/">
+
+	<label class="none" for="s">Search for:</label>
+	<div class="input-wrapper"><input type="text" value="" name="s" id="s" placeholder="Search" /></div>
+	<input type="submit" id="searchsubmit" value="Search" />
+	
+</form>
+<!-- END #searchform --></div><div id="aw_ad300x250_widget-9" class="widget aw_ad300x250_widget"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7056282119617872";
+google_ad_slot = "6645040531";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div><div id="aw_tabbed_widget-3" class="widget aw_tabbed_widget"><div class="tabs"><ul class="nav clearfix"><li><a id="link-most-discussed" href="#tab-most-discussed" title="本月热评文章">本月热评文章</a></li><li><a id="link-latest-comments" href="#tab-latest-comments" title="最近两月热评">最近两月热评</a></li><li><a id="link-tags" href="#tab-tags" title="热门标签">热门标签</a></li></ul><div id="tab-most-discussed" class="tab"><div class="floated-thumb">							
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">								
+								<a target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了"><img src="http://cdn2.jobbole.com/2011/11/Twitter-logo.jpg" alt="" width="40" height="40" /></a>
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta ">
+							
+								<p>
+								    <span class="numb">0</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了">面试题分析：我的Twitter技术面试失败了</a><br />
+								    
+								    <span class="tab_second_line">1</span>
+								    2013/11/01 &middot; <a target='_blank' href='http://blog.jobbole.com/50705/#comments'>32 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">								
+								<a target="_blank" href="http://blog.jobbole.com/50671/" title="对于现代开发来说，JavaScript就是一种垃圾语言"><img src="http://cdn2.jobbole.com/2011/06/javascript-logo.png" alt="" width="40" height="40" /></a>
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta ">
+							
+								<p>
+								    <span class="numb">1</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/50671/" title="对于现代开发来说，JavaScript就是一种垃圾语言">对于现代开发，JavaScript是一种垃圾语言</a><br />
+								    
+								    <span class="tab_second_line">2</span>
+								    2013/10/31 &middot; <a target='_blank' href='http://blog.jobbole.com/50671/#comments'>16 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">
+								
+								    							 <a target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了"><img src="http://cdn2.jobbole.com/2012/12/twitter.jpg" alt="" width="40" height="40" /></a>
+    														
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta  no-thumb">
+							
+								<p>
+								    <span class="numb">2</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/50541/" title="漫画：为什么不能打断程序员？">漫画：为什么不能打断程序员？</a><br />
+								    
+								    <span class="tab_second_line">3</span>
+								    2013/10/29 &middot; <a target='_blank' href='http://blog.jobbole.com/50541/#comments'>11 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">
+								
+								    							 <a target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了"><img src="http://cdn2.jobbole.com/2013/11/john-carmack-20131114.jpg" alt="" width="40" height="40" /></a>
+    														
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta  no-thumb">
+							
+								<p>
+								    <span class="numb">3</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/51434/" title="大牛约翰·卡马克语录">大牛约翰·卡马克语录</a><br />
+								    
+								    <span class="tab_second_line">4</span>
+								    2013/11/14 &middot; <a target='_blank' href='http://blog.jobbole.com/51434/#comments'>9 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">
+								
+								    							 <a target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了"><img src="http://cdn2.jobbole.com/2013/10/111238n7ocihnklo7jnroc.jpg" alt="" width="40" height="40" /></a>
+    														
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta  no-thumb">
+							
+								<p>
+								    <span class="numb">4</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/50689/" title="离了Linux，我就活不了！">离了Linux，我就活不了！</a><br />
+								    
+								    <span class="tab_second_line">5</span>
+								    2013/10/31 &middot; <a target='_blank' href='http://blog.jobbole.com/50689/#comments'>9 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">
+								
+								    							 <a target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了"><img src="http://cdn2.jobbole.com/2013/10/linus-torvalds-linus-torvalds-my-name-is-linus-and-i-am-your.jpg" alt="" width="40" height="40" /></a>
+    														
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta  no-thumb">
+							
+								<p>
+								    <span class="numb">5</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/50124/" title="大神Linus Torvalds语录">大神Linus Torvalds语录</a><br />
+								    
+								    <span class="tab_second_line">6</span>
+								    2013/10/24 &middot; <a target='_blank' href='http://blog.jobbole.com/50124/#comments'>8 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">
+								
+								    							 <a target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了"><img src="http://cdn2.jobbole.com/2013/10/programmers_hardest_tasks-600x700.jpg" alt="" width="40" height="40" /></a>
+    														
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta  no-thumb">
+							
+								<p>
+								    <span class="numb">6</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/50708/" title="程序员最头疼的事：命名">程序员最头疼的事：命名</a><br />
+								    
+								    <span class="tab_second_line">7</span>
+								    2013/10/31 &middot; <a target='_blank' href='http://blog.jobbole.com/50708/#comments'>8 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							                    		<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">								
+								<a target="_blank" href="http://blog.jobbole.com/51500/" title="老码农原创小说《码农故事》 44-45回"><img src="http://cdn2.jobbole.com/2012/08/programmer-developer-at-work.jpg" alt="" width="40" height="40" /></a>
+							</div>
+							<!-- END .post-thumb -->
+                    									
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta  no-thumb">
+							
+								<p>
+								    <span class="numb">7</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/51500/" title="老码农原创小说《码农故事》 44-45回">老码农原创小说《码农故事》 44-45回</a><br />
+								    
+								    <span class="tab_second_line">8</span>
+								    2013/11/17 &middot; <a target='_blank' href='http://blog.jobbole.com/51500/#comments'>6 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">
+								
+								    							 <a target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了"><img src="http://ww4.sinaimg.cn/mw690/7cc829d3gw1eaoag1esufj20bj0gon0x.jpg" alt="" width="40" height="40" /></a>
+    														
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta  no-thumb">
+							
+								<p>
+								    <span class="numb">8</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/51530/" title="程序员必看的那些电影">程序员必看的那些电影</a><br />
+								    
+								    <span class="tab_second_line">9</span>
+								    2013/11/17 &middot; <a target='_blank' href='http://blog.jobbole.com/51530/#comments'>6 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							                    		<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">								
+								<a target="_blank" href="http://blog.jobbole.com/50995/" title="程序员，你调试过的最难的 Bug 是？"><img src="http://cdn2.jobbole.com/2013/09/bug.png" alt="" width="40" height="40" /></a>
+							</div>
+							<!-- END .post-thumb -->
+                    									
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta  no-thumb">
+							
+								<p>
+								    <span class="numb">9</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/50995/" title="程序员，你调试过的最难的 Bug 是？">程序员，你调试过的最难的 Bug 是？</a><br />
+								    
+								    <span class="tab_second_line">10</span>
+								    2013/11/07 &middot; <a target='_blank' href='http://blog.jobbole.com/50995/#comments'>6 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+						</div></div><div id="tab-latest-comments" class="tab"><div class="floated-thumb">							
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">								
+								<a target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了"><img src="http://cdn2.jobbole.com/2011/11/Twitter-logo.jpg" alt="" width="40" height="40" /></a>
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta ">
+							
+								<p>
+								    <span class="numb">0</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了">面试题分析：我的Twitter技术面试失败了</a><br />
+								    
+								    <span class="tab_second_line">1</span>
+								    2013/11/01 &middot; <a target='_blank' href='http://blog.jobbole.com/50705/#comments'>32 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">								
+								<a target="_blank" href="http://blog.jobbole.com/50671/" title="对于现代开发来说，JavaScript就是一种垃圾语言"><img src="http://cdn2.jobbole.com/2011/06/javascript-logo.png" alt="" width="40" height="40" /></a>
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta ">
+							
+								<p>
+								    <span class="numb">1</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/50671/" title="对于现代开发来说，JavaScript就是一种垃圾语言">对于现代开发，JavaScript是一种垃圾语言</a><br />
+								    
+								    <span class="tab_second_line">2</span>
+								    2013/10/31 &middot; <a target='_blank' href='http://blog.jobbole.com/50671/#comments'>16 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">
+								
+								    							 <a target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了"><img src="http://cdn2.jobbole.com/2012/12/twitter.jpg" alt="" width="40" height="40" /></a>
+    														
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta  no-thumb">
+							
+								<p>
+								    <span class="numb">2</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/50541/" title="漫画：为什么不能打断程序员？">漫画：为什么不能打断程序员？</a><br />
+								    
+								    <span class="tab_second_line">3</span>
+								    2013/10/29 &middot; <a target='_blank' href='http://blog.jobbole.com/50541/#comments'>11 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">
+								
+								    							 <a target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了"><img src="http://cdn2.jobbole.com/2013/11/john-carmack-20131114.jpg" alt="" width="40" height="40" /></a>
+    														
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta  no-thumb">
+							
+								<p>
+								    <span class="numb">3</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/51434/" title="大牛约翰·卡马克语录">大牛约翰·卡马克语录</a><br />
+								    
+								    <span class="tab_second_line">4</span>
+								    2013/11/14 &middot; <a target='_blank' href='http://blog.jobbole.com/51434/#comments'>9 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">
+								
+								    							 <a target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了"><img src="http://cdn2.jobbole.com/2013/10/111238n7ocihnklo7jnroc.jpg" alt="" width="40" height="40" /></a>
+    														
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta  no-thumb">
+							
+								<p>
+								    <span class="numb">4</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/50689/" title="离了Linux，我就活不了！">离了Linux，我就活不了！</a><br />
+								    
+								    <span class="tab_second_line">5</span>
+								    2013/10/31 &middot; <a target='_blank' href='http://blog.jobbole.com/50689/#comments'>9 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">
+								
+								    							 <a target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了"><img src="http://ww2.sinaimg.cn/large/7cc829d3gw1e8dtm5q14rj20gu0b4jrr.jpg" alt="" width="40" height="40" /></a>
+    														
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta  no-thumb">
+							
+								<p>
+								    <span class="numb">5</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/46574/" title="如何只用CSS做到完全居中">如何只用CSS做到完全居中</a><br />
+								    
+								    <span class="tab_second_line">6</span>
+								    2013/10/11 &middot; <a target='_blank' href='http://blog.jobbole.com/46574/#comments'>9 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							                    		<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">								
+								<a target="_blank" href="http://blog.jobbole.com/48944/" title="程序员，请停止说这20句话"><img src="http://cdn2.jobbole.com/2012/08/programmer-developer-at-work.jpg" alt="" width="40" height="40" /></a>
+							</div>
+							<!-- END .post-thumb -->
+                    									
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta  no-thumb">
+							
+								<p>
+								    <span class="numb">6</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/48944/" title="程序员，请停止说这20句话">程序员，请停止说这20句话</a><br />
+								    
+								    <span class="tab_second_line">7</span>
+								    2013/09/29 &middot; <a target='_blank' href='http://blog.jobbole.com/48944/#comments'>8 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">
+								
+								    							 <a target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了"><img src="http://cdn2.jobbole.com/2013/10/linus-torvalds-linus-torvalds-my-name-is-linus-and-i-am-your.jpg" alt="" width="40" height="40" /></a>
+    														
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta  no-thumb">
+							
+								<p>
+								    <span class="numb">7</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/50124/" title="大神Linus Torvalds语录">大神Linus Torvalds语录</a><br />
+								    
+								    <span class="tab_second_line">8</span>
+								    2013/10/24 &middot; <a target='_blank' href='http://blog.jobbole.com/50124/#comments'>8 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">
+								
+								    							 <a target="_blank" href="http://blog.jobbole.com/50705/" title="面试题分析：我的Twitter技术面试失败了"><img src="http://cdn2.jobbole.com/2013/10/programmers_hardest_tasks-600x700.jpg" alt="" width="40" height="40" /></a>
+    														
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta  no-thumb">
+							
+								<p>
+								    <span class="numb">8</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/50708/" title="程序员最头疼的事：命名">程序员最头疼的事：命名</a><br />
+								    
+								    <span class="tab_second_line">9</span>
+								    2013/10/31 &middot; <a target='_blank' href='http://blog.jobbole.com/50708/#comments'>8 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+													
+							      
+                    		  
+													
+							<!-- BEGIN .post-thumb -->
+							<div class="post-thumb">								
+								<a target="_blank" href="http://blog.jobbole.com/49332/" title="老码农：关于需求分析的几点体会"><img src="http://cdn2.jobbole.com/2011/11/software-development-logo.jpg" alt="" width="40" height="40" /></a>
+							</div>
+							<!-- END .post-thumb -->
+							
+																					
+							<!-- BEGIN .post-meta -->
+							<div class="post-meta ">
+							
+								<p>
+								    <span class="numb">9</span>
+								    <a class="meta-title" target="_blank" href="http://blog.jobbole.com/49332/" title="老码农：关于需求分析的几点体会">老码农：关于需求分析的几点体会</a><br />
+								    
+								    <span class="tab_second_line">10</span>
+								    2013/10/12 &middot; <a target='_blank' href='http://blog.jobbole.com/49332/#comments'>7 条评论</a></p>
+									
+							</div>
+							<!-- END .post-meta -->
+							
+							<div class="clear"></div>
+							
+						</div></div><div id="tab-tags" class="tab"><p><a href='http://blog.jobbole.com/tag/android/' class='tag-link-467' title='69 个话题' style='font-size: 13.007299270073px;'>Android</a>
+<a href='http://blog.jobbole.com/tag/apple/' class='tag-link-180' title='23 个话题' style='font-size: 8.2043795620438px;'>apple</a>
+<a href='http://blog.jobbole.com/tag/bug/' class='tag-link-218' title='31 个话题' style='font-size: 9.5328467153285px;'>Bug</a>
+<a href='http://blog.jobbole.com/tag/c/' class='tag-link-807' title='59 个话题' style='font-size: 12.29197080292px;'>C++</a>
+<a href='http://blog.jobbole.com/tag/css/' class='tag-link-711' title='44 个话题' style='font-size: 10.963503649635px;'>CSS</a>
+<a href='http://blog.jobbole.com/tag/c%e8%af%ad%e8%a8%80/' class='tag-link-757' title='24 个话题' style='font-size: 8.4087591240876px;'>C语言</a>
+<a href='http://blog.jobbole.com/tag/facebook/' class='tag-link-164' title='77 个话题' style='font-size: 13.416058394161px;'>Facebook</a>
+<a href='http://blog.jobbole.com/tag/featuredpost/' class='tag-link-2241' title='202 个话题' style='font-size: 17.70802919708px;'>featuredpost</a>
+<a href='http://blog.jobbole.com/tag/git/' class='tag-link-885' title='32 个话题' style='font-size: 9.6350364963504px;'>Git</a>
+<a href='http://blog.jobbole.com/tag/github/' class='tag-link-1253' title='39 个话题' style='font-size: 10.452554744526px;'>Github</a>
+<a href='http://blog.jobbole.com/tag/google/' class='tag-link-198' title='174 个话题' style='font-size: 16.992700729927px;'>Google</a>
+<a href='http://blog.jobbole.com/tag/html5/' class='tag-link-182' title='69 个话题' style='font-size: 13.007299270073px;'>HTML5</a>
+<a href='http://blog.jobbole.com/tag/ie/' class='tag-link-1531' title='33 个话题' style='font-size: 9.7372262773723px;'>IE</a>
+<a href='http://blog.jobbole.com/tag/ie-css-bug/' class='tag-link-2785' title='31 个话题' style='font-size: 9.5328467153285px;'>IE CSS Bug</a>
+<a href='http://blog.jobbole.com/tag/ios/' class='tag-link-860' title='65 个话题' style='font-size: 12.700729927007px;'>iOS</a>
+<a href='http://blog.jobbole.com/tag/it/' class='tag-link-513' title='41 个话题' style='font-size: 10.656934306569px;'>IT</a>
+<a href='http://blog.jobbole.com/tag/java/' class='tag-link-457' title='106 个话题' style='font-size: 14.846715328467px;'>java</a>
+<a href='http://blog.jobbole.com/tag/javascript/' class='tag-link-683' title='167 个话题' style='font-size: 16.890510948905px;'>Javascript</a>
+<a href='http://blog.jobbole.com/tag/jquery/' class='tag-link-459' title='45 个话题' style='font-size: 11.065693430657px;'>jQuery</a>
+<a href='http://blog.jobbole.com/tag/linux/' class='tag-link-190' title='71 个话题' style='font-size: 13.109489051095px;'>Linux</a>
+<a href='http://blog.jobbole.com/tag/mysql/' class='tag-link-191' title='25 个话题' style='font-size: 8.5109489051095px;'>MySQL</a>
+<a href='http://blog.jobbole.com/tag/php/' class='tag-link-168' title='47 个话题' style='font-size: 11.270072992701px;'>php</a>
+<a href='http://blog.jobbole.com/tag/python/' class='tag-link-663' title='66 个话题' style='font-size: 12.802919708029px;'>Python</a>
+<a href='http://blog.jobbole.com/tag/ruby/' class='tag-link-647' title='28 个话题' style='font-size: 9.021897810219px;'>Ruby</a>
+<a href='http://blog.jobbole.com/tag/soho/' class='tag-link-153' title='39 个话题' style='font-size: 10.452554744526px;'>soho</a>
+<a href='http://blog.jobbole.com/tag/tiobe/' class='tag-link-1493' title='25 个话题' style='font-size: 8.5109489051095px;'>TIOBE</a>
+<a href='http://blog.jobbole.com/tag/twitter/' class='tag-link-419' title='25 个话题' style='font-size: 8.5109489051095px;'>Twitter</a>
+<a href='http://blog.jobbole.com/tag/ui/' class='tag-link-1143' title='22 个话题' style='font-size: 8px;'>UI</a>
+<a href='http://blog.jobbole.com/tag/web%e5%bc%80%e5%8f%91/' class='tag-link-493' title='80 个话题' style='font-size: 13.620437956204px;'>Web开发</a>
+<a href='http://blog.jobbole.com/tag/%e4%b9%94%e5%b8%83%e6%96%af/' class='tag-link-301' title='28 个话题' style='font-size: 9.021897810219px;'>乔布斯</a>
+<a href='http://blog.jobbole.com/tag/%e4%b9%a6%e7%b1%8d/' class='tag-link-1022' title='33 个话题' style='font-size: 9.7372262773723px;'>书籍</a>
+<a href='http://blog.jobbole.com/tag/%e4%ba%92%e8%81%94%e7%bd%91/' class='tag-link-40' title='74 个话题' style='font-size: 13.313868613139px;'>互联网</a>
+<a href='http://blog.jobbole.com/tag/%e4%ba%a4%e4%ba%92%e8%ae%be%e8%ae%a1/' class='tag-link-648' title='52 个话题' style='font-size: 11.678832116788px;'>交互设计</a>
+<a href='http://blog.jobbole.com/tag/%e4%ba%a7%e5%93%81/' class='tag-link-522' title='55 个话题' style='font-size: 11.985401459854px;'>产品</a>
+<a href='http://blog.jobbole.com/tag/%e4%ba%a7%e5%93%81%e7%bb%8f%e7%90%86/' class='tag-link-549' title='37 个话题' style='font-size: 10.248175182482px;'>产品经理</a>
+<a href='http://blog.jobbole.com/tag/%e4%ba%a7%e5%93%81%e8%ae%be%e8%ae%a1/' class='tag-link-657' title='23 个话题' style='font-size: 8.2043795620438px;'>产品设计</a>
+<a href='http://blog.jobbole.com/tag/%e4%bb%a3%e7%a0%81/' class='tag-link-489' title='83 个话题' style='font-size: 13.722627737226px;'>代码</a>
+<a href='http://blog.jobbole.com/tag/%e4%bc%af%e4%b9%90%e5%91%a8%e5%88%8a/' class='tag-link-1576' title='29 个话题' style='font-size: 9.2262773722628px;'>伯乐周刊</a>
+<a href='http://blog.jobbole.com/tag/%e5%81%a5%e5%ba%b7/' class='tag-link-71' title='22 个话题' style='font-size: 8px;'>健康</a>
+<a href='http://blog.jobbole.com/tag/startup/' class='tag-link-4' title='179 个话题' style='font-size: 17.197080291971px;'>创业</a>
+<a href='http://blog.jobbole.com/tag/%e5%89%8d%e7%ab%af/' class='tag-link-1138' title='50 个话题' style='font-size: 11.576642335766px;'>前端</a>
+<a href='http://blog.jobbole.com/tag/%e5%89%8d%e7%ab%af%e5%bc%80%e5%8f%91/' class='tag-link-775' title='22 个话题' style='font-size: 8px;'>前端开发</a>
+<a href='http://blog.jobbole.com/tag/%e5%9b%a2%e9%98%9f/' class='tag-link-551' title='49 个话题' style='font-size: 11.474452554745px;'>团队</a>
+<a href='http://blog.jobbole.com/tag/%e5%a4%a7%e6%95%b0%e6%8d%ae/' class='tag-link-884' title='23 个话题' style='font-size: 8.2043795620438px;'>大数据</a>
+<a href='http://blog.jobbole.com/tag/%e5%a5%b3%e7%a8%8b%e5%ba%8f%e5%91%98/' class='tag-link-1460' title='31 个话题' style='font-size: 9.5328467153285px;'>女程序员</a>
+<a href='http://blog.jobbole.com/tag/%e5%a8%81%e5%ae%a2/' class='tag-link-129' title='40 个话题' style='font-size: 10.554744525547px;'>威客</a>
+<a href='http://blog.jobbole.com/tag/%e5%ae%89%e5%85%a8/' class='tag-link-1214' title='40 个话题' style='font-size: 10.554744525547px;'>安全</a>
+<a href='http://blog.jobbole.com/tag/%e5%ae%a2%e6%88%b7/' class='tag-link-174' title='47 个话题' style='font-size: 11.270072992701px;'>客户</a>
+<a href='http://blog.jobbole.com/tag/%e5%b7%a5%e4%bd%9c/' class='tag-link-202' title='23 个话题' style='font-size: 8.2043795620438px;'>工作</a>
+<a href='http://blog.jobbole.com/tag/%e5%b7%a5%e5%85%b7/' class='tag-link-18' title='80 个话题' style='font-size: 13.620437956204px;'>工具</a>
+<a href='http://blog.jobbole.com/tag/%e5%b7%a5%e7%a8%8b%e5%b8%88/' class='tag-link-470' title='27 个话题' style='font-size: 8.9197080291971px;'>工程师</a>
+<a href='http://blog.jobbole.com/tag/%e5%bb%ba%e8%ae%ae/' class='tag-link-512' title='31 个话题' style='font-size: 9.5328467153285px;'>建议</a>
+<a href='http://blog.jobbole.com/tag/%e5%bc%80%e5%8f%91%e4%ba%ba%e5%91%98/' class='tag-link-370' title='124 个话题' style='font-size: 15.56204379562px;'>开发人员</a>
+<a href='http://blog.jobbole.com/tag/%e5%bc%80%e6%ba%90/' class='tag-link-196' title='58 个话题' style='font-size: 12.189781021898px;'>开源</a>
+<a href='http://blog.jobbole.com/tag/%e5%be%ae%e5%8d%9a/' class='tag-link-374' title='23 个话题' style='font-size: 8.2043795620438px;'>微博</a>
+<a href='http://blog.jobbole.com/tag/%e5%be%ae%e8%bd%af/' class='tag-link-429' title='41 个话题' style='font-size: 10.656934306569px;'>微软</a>
+<a href='http://blog.jobbole.com/tag/%e6%89%8b%e6%9c%ba%e5%ba%94%e7%94%a8/' class='tag-link-556' title='27 个话题' style='font-size: 8.9197080291971px;'>手机应用</a>
+<a href='http://blog.jobbole.com/tag/%e6%8b%9b%e8%81%98/' class='tag-link-326' title='41 个话题' style='font-size: 10.656934306569px;'>招聘</a>
+<a href='http://blog.jobbole.com/tag/%e6%8f%92%e4%bb%b6/' class='tag-link-569' title='23 个话题' style='font-size: 8.2043795620438px;'>插件</a>
+<a href='http://blog.jobbole.com/tag/%e6%95%88%e7%8e%87/' class='tag-link-415' title='25 个话题' style='font-size: 8.5109489051095px;'>效率</a>
+<a href='http://blog.jobbole.com/tag/%e6%95%8f%e6%8d%b7/' class='tag-link-765' title='22 个话题' style='font-size: 8px;'>敏捷</a>
+<a href='http://blog.jobbole.com/tag/%e6%95%b0%e6%8d%ae%e5%ba%93/' class='tag-link-353' title='29 个话题' style='font-size: 9.2262773722628px;'>数据库</a>
+<a href='http://blog.jobbole.com/tag/%e6%97%b6%e9%97%b4%e7%ae%a1%e7%90%86/' class='tag-link-271' title='31 个话题' style='font-size: 9.5328467153285px;'>时间管理</a>
+<a href='http://blog.jobbole.com/tag/%e6%9c%8d%e5%8a%a1%e5%99%a8/' class='tag-link-311' title='24 个话题' style='font-size: 8.4087591240876px;'>服务器</a>
+<a href='http://blog.jobbole.com/tag/%e6%9e%b6%e6%9e%84/' class='tag-link-603' title='29 个话题' style='font-size: 9.2262773722628px;'>架构</a>
+<a href='http://blog.jobbole.com/tag/%e6%a1%86%e6%9e%b6/' class='tag-link-804' title='23 个话题' style='font-size: 8.2043795620438px;'>框架</a>
+<a href='http://blog.jobbole.com/tag/%e6%b1%82%e8%81%8c/' class='tag-link-172' title='26 个话题' style='font-size: 8.7153284671533px;'>求职</a>
+<a href='http://blog.jobbole.com/tag/%e6%b5%8b%e8%af%95/' class='tag-link-678' title='65 个话题' style='font-size: 12.700729927007px;'>测试</a>
+<a href='http://blog.jobbole.com/tag/%e6%b5%8b%e8%af%95%e4%ba%ba%e5%91%98/' class='tag-link-778' title='26 个话题' style='font-size: 8.7153284671533px;'>测试人员</a>
+<a href='http://blog.jobbole.com/tag/%e6%b5%8f%e8%a7%88%e5%99%a8/' class='tag-link-63' title='40 个话题' style='font-size: 10.554744525547px;'>浏览器</a>
+<a href='http://blog.jobbole.com/tag/%e6%b8%b8%e6%88%8f/' class='tag-link-797' title='28 个话题' style='font-size: 9.021897810219px;'>游戏</a>
+<a href='http://blog.jobbole.com/tag/%e6%bc%ab%e7%94%bb/' class='tag-link-503' title='22 个话题' style='font-size: 8px;'>漫画</a>
+<a href='http://blog.jobbole.com/tag/%e7%94%a8%e6%88%b7/' class='tag-link-460' title='55 个话题' style='font-size: 11.985401459854px;'>用户</a>
+<a href='http://blog.jobbole.com/tag/%e7%94%a8%e6%88%b7%e4%bd%93%e9%aa%8c/' class='tag-link-580' title='87 个话题' style='font-size: 13.92700729927px;'>用户体验</a>
+<a href='http://blog.jobbole.com/tag/%e7%a0%81%e5%86%9c%e6%95%85%e4%ba%8b/' class='tag-link-2863' title='25 个话题' style='font-size: 8.5109489051095px;'>码农故事</a>
+<a href='http://blog.jobbole.com/tag/%e7%a7%bb%e5%8a%a8%e5%ba%94%e7%94%a8/' class='tag-link-654' title='54 个话题' style='font-size: 11.883211678832px;'>移动应用</a>
+<a href='http://blog.jobbole.com/tag/%e7%a8%8b%e5%ba%8f%e5%91%98/' class='tag-link-368' title='541 个话题' style='font-size: 22px;'>程序员</a>
+<a href='http://blog.jobbole.com/tag/%e7%ae%97%e6%b3%95/' class='tag-link-650' title='41 个话题' style='font-size: 10.656934306569px;'>算法</a>
+<a href='http://blog.jobbole.com/tag/management/' class='tag-link-32' title='32 个话题' style='font-size: 9.6350364963504px;'>管理</a>
+<a href='http://blog.jobbole.com/tag/%e7%bc%96%e7%a8%8b/' class='tag-link-389' title='105 个话题' style='font-size: 14.846715328467px;'>编程</a>
+<a href='http://blog.jobbole.com/tag/%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80/' class='tag-link-596' title='101 个话题' style='font-size: 14.642335766423px;'>编程语言</a>
+<a href='http://blog.jobbole.com/tag/%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80%e6%8e%92%e8%a1%8c%e6%a6%9c/' class='tag-link-1621' title='28 个话题' style='font-size: 9.021897810219px;'>编程语言排行榜</a>
+<a href='http://blog.jobbole.com/tag/%e7%bd%91%e7%ab%99/' class='tag-link-150' title='30 个话题' style='font-size: 9.3284671532847px;'>网站</a>
+<a href='http://blog.jobbole.com/tag/%e7%bd%91%e9%a1%b5%e8%ae%be%e8%ae%a1/' class='tag-link-454' title='68 个话题' style='font-size: 12.905109489051px;'>网页设计</a>
+<a href='http://blog.jobbole.com/tag/translation/' class='tag-link-49' title='41 个话题' style='font-size: 10.656934306569px;'>翻译</a>
+<a href='http://blog.jobbole.com/tag/%e8%81%8c%e5%9c%ba/' class='tag-link-253' title='139 个话题' style='font-size: 16.07299270073px;'>职场</a>
+<a href='http://blog.jobbole.com/tag/%e8%87%aa%e7%94%b1%e8%81%8c%e4%b8%9a/' class='tag-link-315' title='127 个话题' style='font-size: 15.664233576642px;'>自由职业</a>
+<a href='http://blog.jobbole.com/tag/%e8%8b%b9%e6%9e%9c/' class='tag-link-183' title='32 个话题' style='font-size: 9.6350364963504px;'>苹果</a>
+<a href='http://blog.jobbole.com/tag/%e8%90%a5%e9%94%80/' class='tag-link-262' title='34 个话题' style='font-size: 9.8394160583942px;'>营销</a>
+<a href='http://blog.jobbole.com/tag/%e8%a5%bf%e8%a5%bf%e5%90%b9%e9%9b%aa/' class='tag-link-2282' title='29 个话题' style='font-size: 9.2262773722628px;'>西西吹雪</a>
+<a href='http://blog.jobbole.com/tag/%e8%ae%be%e8%ae%a1/' class='tag-link-431' title='115 个话题' style='font-size: 15.153284671533px;'>设计</a>
+<a href='http://blog.jobbole.com/tag/%e8%ae%be%e8%ae%a1%e5%b8%88/' class='tag-link-436' title='81 个话题' style='font-size: 13.620437956204px;'>设计师</a>
+<a href='http://blog.jobbole.com/tag/%e8%b6%a3%e6%96%87/' class='tag-link-2105' title='26 个话题' style='font-size: 8.7153284671533px;'>趣文</a>
+<a href='http://blog.jobbole.com/tag/%e8%bd%af%e4%bb%b6/' class='tag-link-170' title='28 个话题' style='font-size: 9.021897810219px;'>软件</a>
+<a href='http://blog.jobbole.com/tag/%e8%bd%af%e4%bb%b6%e5%b7%a5%e7%a8%8b%e5%b8%88/' class='tag-link-400' title='34 个话题' style='font-size: 9.8394160583942px;'>软件工程师</a>
+<a href='http://blog.jobbole.com/tag/%e8%bd%af%e4%bb%b6%e5%bc%80%e5%8f%91/' class='tag-link-38' title='56 个话题' style='font-size: 12.087591240876px;'>软件开发</a>
+<a href='http://blog.jobbole.com/tag/%e9%9d%a2%e8%af%95/' class='tag-link-173' title='82 个话题' style='font-size: 13.722627737226px;'>面试</a>
+<a href='http://blog.jobbole.com/tag/%e9%a1%b9%e7%9b%ae/' class='tag-link-177' title='38 个话题' style='font-size: 10.350364963504px;'>项目</a>
+<a href='http://blog.jobbole.com/tag/%e9%a1%b9%e7%9b%ae%e7%bb%8f%e7%90%86/' class='tag-link-1049' title='35 个话题' style='font-size: 10.043795620438px;'>项目经理</a>
+<a href='http://blog.jobbole.com/tag/%e9%bb%91%e5%ae%a2/' class='tag-link-617' title='34 个话题' style='font-size: 9.8394160583942px;'>黑客</a></p></div></div></div><div id="aw_ad300x250_widget-11" class="widget aw_ad300x250_widget"><script type="text/javascript">
+var cpro_id = "u1296549";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script></div><div id="recentcomments" class="widget widget_recentcomments"><h3 class="widget-title">最新评论 （你不在其列？坐等你的观点！）</h3><ul><li class="rc-navi rc-clearfix"><span class="rc-loading">正在加载...</span></li><li id="rc-comment-temp" class="rc-item rc-comment rc-clearfix"><div class="rc-info"></div><div class="rc-timestamp"></div><div class="rc-excerpt"></div></li><li id="rc-ping-temp" class="rc-item rc-ping rc-clearfix"><span class="rc-label"></span></li></ul></div><div id="aw_most_active_users_widget-2" class="widget aw_most_active_users_widget">		
+		<h3 class="widget-title">最近评论最多的读者 (Top 40)</h3>
+		
+		<!-- BEGIN .container -->
+		<div class="container ffox_most_active">
+			<li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="yanhaijing (15 条评论)"><img src="http://gravatar.com/avatar/1dda58d61467df756d32ad59cf08b65d?d=mm&amp;s=32&amp;r=G" class="avatar user-9174-avatar avatar-32 photo" width="32" height="32" alt="yanhaijing 的头像" /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="黄利民 (12 条评论)"><img src="http://blog.jobbole.com/wp-content/uploads/sites/2/userphoto/6285.thumbnail.jpg" alt="黄利民" width="67" height="80" class="photo" style="border:0px;height:32px;width:32px" /></a></li><li><a ref='nofollow' target='_blank' href="http://weibo.com/ned11" title="老码农 (10 条评论)"><img src="http://blog.jobbole.com/wp-content/uploads/sites/2/userphoto/8271.thumbnail.png" alt="老码农" width="49" height="50" class="photo" style="border:0px;height:32px;width:32px" /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="CuGBabyBeaR (9 条评论)"><img src="http://gravatar.com/avatar/837834393dcc6006035403b5df2ba9c0?d=mm&amp;s=32&amp;r=G" class="avatar user-9327-avatar avatar-32 photo" width="32" height="32" alt="CuGBabyBeaR 的头像" /></a></li><li><a ref='nofollow' target='_blank' href="http://codemany.com" title="dohkoos (9 条评论)"><img src="http://gravatar.com/avatar/d8a3b2854c4917d39d52b96cd0da3461?d=mm&amp;s=32&amp;r=G" class="avatar user-8356-avatar avatar-32 photo" width="32" height="32" alt="dohkoos 的头像" /></a></li><li><a ref='nofollow' target='_blank' href="http://programonkey.me" title="peach5460 (7 条评论)"><img src="http://gravatar.com/avatar/e1d45f6d4b14aa7bf686e6fc80cfcccd?d=mm&amp;s=32&amp;r=G" class="avatar user-9885-avatar avatar-32 photo" width="32" height="32" alt="peach5460 的头像" /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="殊麒 (6 条评论)"><img src="http://blog.jobbole.com/wp-content/uploads/avatars/9454/7b44eb0baad0d9722a54f0ecb0bd5edb-bpthumb.jpg" class="avatar user-9454-avatar avatar-32 photo" width="32" height="32" alt="殊麒 的头像" /></a></li><li><a ref='nofollow' target='_blank' href="http://sinacn.weibodangan.com/" title="微博档案 (6 条评论)"><img alt='' src='http://1.gravatar.com/avatar/d8ef671d425fd557455217d5414bd102?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="叶先生 (6 条评论)"><img src="http://gravatar.com/avatar/a55f82dd3faad9e653b8c35be48e7853?d=mm&amp;s=32&amp;r=G" class="avatar user-11163-avatar avatar-32 photo" width="32" height="32" alt="叶先生 的头像" /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="帝霸戈 (6 条评论)"><img alt='' src='http://0.gravatar.com/avatar/86f28faaad4869b7e36198190730eb17?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="多蒙菜 (5 条评论)"><img alt='' src='http://1.gravatar.com/avatar/dee8ea79410098612f9347b6e0afb34f?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://axb.me" title="ChanneW (4 条评论)"><img alt='' src='http://0.gravatar.com/avatar/a754df62bcca482e53736b7f53673cc5?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="呢喃的猫咪 (3 条评论)"><img src="http://gravatar.com/avatar/225802d6eddd2d886a87c5119b7ea72a?d=mm&amp;s=32&amp;r=G" class="avatar user-9409-avatar avatar-32 photo" width="32" height="32" alt="呢喃的猫咪 的头像" /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="jason (2 条评论)"><img src="http://gravatar.com/avatar/66534752ff0ada9783df975bf47b63d5?d=mm&amp;s=32&amp;r=G" class="avatar user-11056-avatar avatar-32 photo" width="32" height="32" alt="jason 的头像" /></a></li><li><a ref='nofollow' target='_blank' href="http://www.vose.me" title="vose (2 条评论)"><img alt='' src='http://1.gravatar.com/avatar/3fd7730ba0dec67903cd2d5b5ce80f60?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://mantou.eu.org/" title="馒头 (2 条评论)"><img alt='' src='http://1.gravatar.com/avatar/300dc9bba64dfc7252d703d09bccea3e?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="dym (2 条评论)"><img src="http://gravatar.com/avatar/a427ac62917c7fe1064e86f6b2dc94a4?d=mm&amp;s=32&amp;r=G" class="avatar user-11215-avatar avatar-32 photo" width="32" height="32" alt="dym 的头像" /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="guo (2 条评论)"><img alt='' src='http://0.gravatar.com/avatar/8819217dd3c656a54e8224fcdb2a953a?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="hal (2 条评论)"><img alt='' src='http://0.gravatar.com/avatar/ca9c0a00b844b2121720a5a721567090?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://www.iris-dreamwriter.com" title="Dreamwiter (2 条评论)"><img alt='' src='http://1.gravatar.com/avatar/bdc18b2a6c7ed0b03f313320e4238de8?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://www.52code.org" title="qzzsunly (2 条评论)"><img alt='' src='http://0.gravatar.com/avatar/47ad7b01256c659365fd3f0f56eba947?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="jack (2 条评论)"><img alt='' src='http://1.gravatar.com/avatar/bf2bd3db937104696119a12925121b26?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="Kation (2 条评论)"><img alt='' src='http://1.gravatar.com/avatar/9c4bbc0afbe1fd64062ffe2b09f68247?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="Mark (2 条评论)"><img src="http://blog.jobbole.com/wp-content/uploads/avatars/10344/137591d3a78ac9f7c9aa62ebb63b45fe-bpthumb.jpg" class="avatar user-10344-avatar avatar-32 photo" width="32" height="32" alt="Mark 的头像" /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="piecehealth (2 条评论)"><img alt='' src='http://1.gravatar.com/avatar/b4caa41abcfa0f0c27c080e3c92619bf?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="lazyPHP (2 条评论)"><img alt='' src='http://1.gravatar.com/avatar/7cdd0aaa90fe206c7ecde10e8507af98?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="starkjavac (2 条评论)"><img alt='' src='http://0.gravatar.com/avatar/2800eefe5d54c72b2cdd9eb47e819923?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://www.uustory.com" title="优优 (2 条评论)"><img alt='' src='http://1.gravatar.com/avatar/950201fa1c0e1e5874145749208857a7?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="caochao (2 条评论)"><img src="http://gravatar.com/avatar/8ae8062463cf4e9e0eead05f653f80ea?d=mm&amp;s=32&amp;r=G" class="avatar user-11458-avatar avatar-32 photo" width="32" height="32" alt="caochao 的头像" /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="tpdlx (2 条评论)"><img alt='' src='http://0.gravatar.com/avatar/6a0be798e7ced723283a5f25f491276c?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="Rosone (2 条评论)"><img alt='' src='http://0.gravatar.com/avatar/215fed6894aa4b40d5bc810bfa4183d7?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="json (2 条评论)"><img alt='' src='http://1.gravatar.com/avatar/7f72989d866836aff9c7b3c9ac6e86e9?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="kkk (2 条评论)"><img alt='' src='http://0.gravatar.com/avatar/a813735614db7904e9e3b17f8fe46125?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="sacomplex (2 条评论)"><img src="http://gravatar.com/avatar/ea50ea675c44a504f3c5f7f73f16ace7?d=mm&amp;s=32&amp;r=G" class="avatar user-11709-avatar avatar-32 photo" width="32" height="32" alt="sacomplex 的头像" /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="Edward Shen (2 条评论)"><img alt='' src='http://0.gravatar.com/avatar/696d7e03b1a5e251755bca604fcb7071?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="beyondghx (1 条评论)"><img alt='' src='http://0.gravatar.com/avatar/4e8d799d50da9fc80315df91e4680c5e?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="hutuxu (1 条评论)"><img alt='' src='http://0.gravatar.com/avatar/246cfe1ac3a6feb1856aa96b029dc4fb?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="温凯 (1 条评论)"><img alt='' src='http://1.gravatar.com/avatar/5f36408bfdd09c6f5777fe442fd39d06?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="思密达 (1 条评论)"><img alt='' src='http://0.gravatar.com/avatar/2267145133310596a9c1d9d1066ec013?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' /></a></li><li><a ref='nofollow' target='_blank' href="http://blog.jobbole.com" title="mind (1 条评论)"><img src="http://gravatar.com/avatar/1e98d6dd9728fd6d6882458c6bd20f02?d=mm&amp;s=32&amp;r=G" class="avatar user-11069-avatar avatar-32 photo" width="32" height="32" alt="mind 的头像" /></a></li>				
+			<div class="clear"></div>
+						
+		</div>
+		<br/>
+		<!-- END .container -->
+				
+		</div><div id="aw_ad300x250_widget-10" class="widget aw_ad300x250_widget"><script type="text/javascript">
+var cpro_id = "u1296550";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script></div>	
+	<!-- BEGIN .container -->
+	<div class="container">
+	
+		<!-- BEGIN .grid-2 -->
+		<div class="grid-2">
+			
+						
+		</div>
+		<!-- END .grid-2 -->
+		
+		<!-- BEGIN .grid-2 -->
+		<div class="grid-2">
+			
+						
+		</div>
+		<!-- END .grid-2 -->
+		
+		<div class="clear"></div>
+			
+	</div>
+	<!-- END .container -->
+
+</div>
+<!-- END #sidebar -->
+<div class="clear"></div>	
+
+
+</div>
+<!-- END #wrapper -->
+
+<!-- BEGIN footer -->
+<footer>
+
+	<!-- BEGIN .container -->
+	<div class="container">
+		
+		<!-- BEGIN .grid-4 -->
+		<div class="grid-4">
+			
+			<div id="text-3" class="widget widget_text"><h3 class="widget-title">关于伯乐在线博客</h3>			<div class="textwidget"><p>在这个信息爆炸的时代，人们已然被大量、快速并且简短的信息所包围。然而，我们相信：过多“快餐”式的阅读只会令人“虚胖”，缺乏实质的内涵。伯乐在线博客团队正试图以我们微薄的力量，把优秀的原创/译文分享给读者，为“快餐”添加一些“营养”元素。</p>
+<p>伯乐在线-博客( blog.JobBole.com )专注于分享职业相关的博客文章、业界资讯和职业相关的优秀工具和资源。博文类别包括：程序员、设计、营销、互联网、IT技术、自由职业、创业、运营、管理、翻译和人力资源等等。期待您通过<a href="http://blog.jobbole.com/feed/">RSS订阅</a>和<a href="http://weibo.com/jobbole">微博</a>关注我们。如果您也愿意<a href="/tougao">分享一份自己的原创/译文</a>，可以<a href="/tougao">从这里开始</a>～</p>
+</div>
+		</div>			
+		</div>
+		<!-- END .grid-4 -->
+		
+		<!-- BEGIN .grid-4 -->
+		<div class="grid-4">
+			
+			<div id="text-7" class="widget widget_text"><h3 class="widget-title">联系我们</h3>			<div class="textwidget"><p><strong>网站合作和广告投放</strong></p>
+<p>联系邮箱：Webmaster (at) JobBole.com<br />
+QQ： 630772296  （加好友请注明来意）<br />
+<strong></strong></p>
+<p><strong>网站使用问题</strong></p>
+<p>请直接在<a target='_blank' href="http://www.jobbole.com/forums/forum/feedback/">这里发帖</a>询问或者反馈</p>
+</div>
+		</div>			
+		</div>
+		<!-- END .grid-4 -->
+		
+		<!-- BEGIN .grid-4 -->
+		<div class="grid-4">
+			
+			<div id="text-4" class="widget widget_text"><h3 class="widget-title">欢迎关注并订阅伯乐在线博客</h3>			<div class="textwidget"><div id="aw_socialcounter_widget-2" class="widget aw_socialcounter_widget">
+<ul>
+<li>
+<a target="_blank" href="http://weibo.com/jobbole"><img class="alignleft" src="http://blog.jobbole.com/common_images/sina_32.png"  alt="关注我们的新浪微博" title="关注我们的新浪微博" /></a></p>
+<p><a target="_blank" href="http://t.qq.com/jobole"><img class="alignleft" src="http://blog.jobbole.com/common_images/qq_32.png"  alt="关注我们的腾讯微博" title="关注我们的腾讯微博" /></a></p>
+<div class="view-rss"><a  href="javascript:void(0);" class="rss-link"><img class="alignleft" src="http://blog.jobbole.com/common_images/rss_32.png" alt="RSS订阅" title="RSS订阅" /></a></p>
+<div class="children">
+<ul>
+<li><a target="_blank" href="http://r.qq.com/cgi-bin/reader_switch?u=http://blog.jobbole.com/feed/"><img src="http://blog.jobbole.com/common_images/sub_qq.gif" /></a></li>
+<li><a target="_blank" href="http://www.xianguo.com/subscribe.php?url=http://blog.jobbole.com/feed/"><img src="http://blog.jobbole.com/common_images/sub_xianguo.gif" /></a></li>
+<li><a target="_blank" href="http://reader.youdao.com/b.do?url=http://blog.jobbole.com/feed/"><img src="http://blog.jobbole.com/common_images/sub_youdao.gif" /></a></li>
+<li><a target="_blank" href="http://9.douban.com/reader/subscribe?url=http://blog.jobbole.com/feed/"><img src="http://blog.jobbole.com/common_images/sub_9dian.gif" /></a></li>
+<li><a target="_blank" href="http://www.zhuaxia.com/add_channel.php?url=http://blog.jobbole.com/feed/"><img src="http://blog.jobbole.com/common_images/sub_zhaxia.gif" /></a></li>
+</ul>
+</div>
+</div>
+<p><a target="_blank" href="http://list.qq.com/cgi-bin/qf_invite?id=f12eb90e095ea83b9c0683e2822949378899f8628c96050b"><img class="alignleft" src="http://blog.jobbole.com/common_images/email_32.png"  alt="邮件订阅" title="邮件订阅" /></a>
+</li>
+</ul>
+</div>
+<p><br/><br />
+<script language=javascript> 
+var randomNum = Math.round(Math.random()*4);
+var image=new Array(5);
+image[0]="design-weixin-logo.jpg";
+image[1]="jobbole-weixin-logo.jpg";
+image[2]="programmer-weixin-logo.jpg";
+image[3]="geekfan-weixin.png";
+image[4]="importnew-weixin.png";
+var imageUrl="http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/img/"+image[randomNum];
+var titles=new Array(5);
+titles[0]="扫描关注设计的那些事，微信号：AboutDesigner";
+titles[1]="扫描关注伯乐在线，微信号：Jobbole";
+titles[2]="扫描关注程序员的那些事，微信号：iProgrammer";
+titles[3]="扫描关注极客范，微信号：iGeekFan";
+titles[4]="扫描关注ImportNew，微信号：importnew";
+var imageTitle = titles[randomNum];
+var adHTML = "<img src='"+imageUrl+"' title='"+imageTitle+"' alt='"+imageTitle+"' border='0'>";
+document.write(adHTML);
+</script></p>
+</div>
+		</div>			
+		</div>
+		<!-- END .grid-4 -->
+		
+		<div class="clear"></div>
+	
+	</div>
+	<!-- END .container -->
+
+	<!-- BEGIN #bottom -->
+	<div id="bottom">
+	
+		<!-- BEGIN .container -->
+		<div class="container">
+		
+			<!-- BEGIN .grid-12 -->
+			<div class="grid-12">
+	
+				<p>&copy; 2013 <a href="http://blog.jobbole.com">博客 &#8211; 伯乐在线</a>. <a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow">京ICP备10038840号</a> <span style="float:right; ">
+<a href="http://www.jobbole.com">首页</a>&nbsp;&nbsp;
+<a href="http://blog.jobbole.com">博客首页</a>&nbsp;&nbsp;
+<a href="http://www.jobbole.com/about-us">关于我们</a>&nbsp;&nbsp;
+<a href="http://www.jobbole.com/contact-us/">联系我们</a>&nbsp;&nbsp;
+<a href="http://www.jobbole.com/contact-us/">广告投放</a>&nbsp;&nbsp;
+<a href="http://www.jobbole.com/contact-us/">网站合作</a>&nbsp;&nbsp;
+<a href="http://www.jobbole.com/terms-of-use/">使用条款</a>
+</span> </p>
+			
+			</div>
+			<!-- END .grid-12 -->
+			
+			<div class="clear"></div>
+						
+		</div>
+		<!-- END .container -->
+		
+	</div>
+	<!-- END #bottom -->
+	
+</footer>
+<!-- END footer -->
+
+
+<script>
+jQuery(document).ready(function(){
+jQuery(".view-rss .rss-link").click(function(){
+if( jQuery(".view-rss").children("div").length > 0 ){
+jQuery(this).siblings("div").toggle();
+}
+});
+jQuery(document).click(function() {
+jQuery(".view-rss div").hide();
+});
+jQuery(".view-rss div, .view-rss .rss-link").click(function(e) {
+e.stopPropagation();
+return false;
+});
+});
+</script>
+
+	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key="></script>
+	
+<script type="text/javascript">
+jQuery(document).ready(function(){
+  var q2w3_sidebar_1_options = { "sidebar" : "sidebar-1", "margin_top" : 10, "margin_bottom" : 0, "screen_max_width" : 0, "widgets" : ['aw_ad300x250_widget-10'] }
+  setInterval(function () { q2w3_sidebar(q2w3_sidebar_1_options); }, 1000);
+});
+</script>
+
+<!-- Generated in 2.502 seconds. (338 q) -->
+
+	<script>
+/* <![CDATA[ */
+var rcGlobal = {
+	serverUrl		:'http://blog.jobbole.com',
+	infoTemp		:'Re: %POST%',
+	loadingText		:'正在加载',
+	noCommentsText	:'没有任何评论',
+	newestText		:'&laquo; 最新的',
+	newerText		:'&laquo; 上一页',
+	olderText		:'下一页 &raquo;',
+	showContent		:'',
+	external		:'1',
+	avatarSize		:'32',
+	avatarPosition	:'left',
+	anonymous		:'匿名'
+};
+/* ]]> */
+</script>
+
+<!-- WP SyntaxHighlighter Ver.1.7.3 Begin -->
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shLegacy.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shAutoloader.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAppleScript.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAS3.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushBash.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushColdFusion.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCpp.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCss.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDelphi.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDiff.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushErlang.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushGroovy.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJavaFX.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPerl.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPhp.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPowerShell.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPython.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushRuby.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushSass.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushScala.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushSql.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushVb.js?ver=3.0"></script>
+<script type="text/javascript" src="http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js?ver=3.0"></script>
+<script type="text/javascript">//<![CDATA[
+	SyntaxHighlighter.autoloader(
+	"applescript	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAppleScript.js?ver=3.0"
+	,"as3 actionscript3	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAS3.js?ver=3.0"
+	,"bash shell	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushBash.js?ver=3.0"
+	,"cf coldfusion	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushColdFusion.js?ver=3.0"
+	,"cpp c	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCpp.js?ver=3.0"
+	,"c# c-sharp csharp	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0"
+	,"css	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCss.js?ver=3.0"
+	,"delphi pas pascal	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDelphi.js?ver=3.0"
+	,"diff patch	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDiff.js?ver=3.0"
+	,"erl erlang	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushErlang.js?ver=3.0"
+	,"groovy	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushGroovy.js?ver=3.0"
+	,"java	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js?ver=3.0"
+	,"jfx javafx	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJavaFX.js?ver=3.0"
+	,"js jscript javascript	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0"
+	,"perl pl	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPerl.js?ver=3.0"
+	,"php	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPhp.js?ver=3.0"
+	,"plain text	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0"
+	,"ps powershell	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPowerShell.js?ver=3.0"
+	,"py python	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPython.js?ver=3.0"
+	,"rails ror ruby rb	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushRuby.js?ver=3.0"
+	,"sass scss	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushSass.js?ver=3.0"
+	,"scala	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushScala.js?ver=3.0"
+	,"sql	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushSql.js?ver=3.0"
+	,"vb vbnet	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushVb.js?ver=3.0"
+	,"xml xhtml xslt html	http://blog.jobbole.com/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js?ver=3.0"
+	);
+	SyntaxHighlighter.defaults['auto-links'] = false;
+	SyntaxHighlighter.defaults['quick-code'] = true;
+	SyntaxHighlighter.defaults['title'] = '';
+	SyntaxHighlighter.defaults['class-name'] = 'notranslate';
+	SyntaxHighlighter.defaults['collapse'] = false;
+	SyntaxHighlighter.defaults['first-line'] = 1;
+	SyntaxHighlighter.defaults['gutter'] = true;
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['smart-tabs'] = true;
+	SyntaxHighlighter.defaults['tab-size'] = 4;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+ SyntaxHighlighter.config.stripBrs = true;
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = "Can't find brush for: ";
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = "Brush wasn't configured for html-script option: ";
+	SyntaxHighlighter.all();
+	dp.SyntaxHighlighter.HighlightAll('code')
+//]]></script>
+<!-- WP SyntaxHighlighter Ver.1.7.3 End -->
+<!-- Lightbox Plus ColorBox v2.6/1.3.32 - 2013.01.24 - Message: 0-->
+<script type="text/javascript">
+jQuery(document).ready(function($){
+  $("a[rel*=lightbox]").colorbox({speed:450,initialWidth:"300",initialHeight:"100",opacity:0.8,loop:false,scrolling:false,escKey:false,arrowKey:false,top:false,right:false,bottom:false,left:false});
+});
+</script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/plugins/comment-rating/ck-karma.js?ver=3.5.2'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/plugins/wp-recentcomments/js/wp-recentcomments.dev.js?ver=2.2.7'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var viewsCacheL10n = {"admin_ajax_url":"http:\/\/blog.jobbole.com\/wp-admin\/admin-ajax.php","post_id":"50705"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/plugins/wp-postviews/postviews-cache.js?ver=1.64'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/js/ready.js?ver=1.0'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/js/easing.js?ver=1.3'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/js/superfish.js?ver=1.4.8'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/js/validate.js?ver=1.9.0'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/js/touchwipe.js?ver=1.1.1'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/js/caroufredsel.js?ver=5.5.0'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/js/flexslider.js?ver=2.0'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/js/jplayer.js?ver=2.1.0'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/js/fitvids.js?ver=1.0'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/js/gmap.js?ver=1.1.0'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/js/selectnav.js?ver=0.1'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/js/effects.js?ver=1.0'></script>
+<script type='text/javascript' src='http://blog.jobbole.com/wp-content/plugins/lightbox-plus/js/jquery.colorbox.1.3.32.js?ver=1.3.32'></script>
+
+
+<div id="full-btm" style="position:fixed; left:50%; top:550px; margin-left:425px;  z-index:100; text-align:center; cursor:pointer;">
+<a><img src="http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/img/back-btm.png" width="20" border=0 alt="跳到底部" title="跳到底部"></a>
+</div>
+
+<script type="text/javascript">
+jQuery('#full-btm').click(function(){
+    jQuery('html, body').animate({scrollTop:jQuery(document).height()}, 'slow');
+    return false;
+});
+</script>
+
+<div id="full-top" style="position:fixed; left:50%; top:520px; margin-left:475px; z-index:100; text-align:center; cursor:pointer;">
+<a><img src="http://blog.jobbole.com/wp-content/themes/jobboleblogv3/_assets/img/back-top.png" width="20" border=0 alt="返回顶部" title="返回顶部"></a>
+</div>
+
+<script type="text/javascript">
+jQuery('#full-top').click(function(){
+    jQuery('html, body').animate({scrollTop:0}, 'slow');
+    return false;
+});
+</script>
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fcb11f6f7ce0226dea89a72a0b3476e9c' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+<script type="text/javascript">//<![CDATA[
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-15621043-1']);
+_gaq.push(['_setCustomVar',1,'logged-in','administrator',1],['_trackPageview']);
+(function () {
+	var ga = document.createElement('script');
+	ga.type = 'text/javascript';
+	ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(ga, s);
+})();
+//]]></script>
+
+</body>
+<!-- END body -->
+
+</html>
+<!-- END html -->
