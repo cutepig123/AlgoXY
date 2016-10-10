@@ -7,10 +7,13 @@ void testBase64();
 void testList();
 void testLift();
 void testQsort();
+void testHeapsort();
+void testPrioQueue();
+
 
 int main()
 {
-	testQsort();
+	testPrioQueue();
     return 0;
 }
 
