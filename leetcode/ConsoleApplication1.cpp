@@ -9,11 +9,11 @@ void testLift();
 void testQsort();
 void testHeapsort();
 void testPrioQueue();
-
+void testKmp();
 
 int main()
 {
-	testPrioQueue();
+	testKmp();
     return 0;
 }
 
