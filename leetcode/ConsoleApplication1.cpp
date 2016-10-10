@@ -6,10 +6,11 @@ void testQ278();
 void testBase64();
 void testList();
 void testLift();
+void testQsort();
 
 int main()
 {
-	testLift();
+	testQsort();
     return 0;
 }
 
