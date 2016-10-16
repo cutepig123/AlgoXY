@@ -15,10 +15,12 @@ void testCfg();
 void testReplace();
 void testLCS();
 void testSharedPtr();
+void testFft();
+
 
 int main()
 {
-	testSharedPtr();
+	testFft();
     return 0;
 }
 

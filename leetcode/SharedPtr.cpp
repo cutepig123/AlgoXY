@@ -1,3 +1,5 @@
+//TODO: impl weak_ptr
+
 #include <vector>
 #include <deque>
 #include <string>
@@ -92,19 +94,19 @@ private:
 	friend class MyWeakPtr;
 };
 
-template <class T>
-class MyWeakPtr
-{
-public:
-	MyWeakPtr() {
-	}
-	~MyWeakPtr() {
-	}
-
-private:
-	T *m_p;
-	int *m_n;
-};
+//template <class T>
+//class MyWeakPtr
+//{
+//public:
+//	MyWeakPtr() {
+//	}
+//	~MyWeakPtr() {
+//	}
+//
+//private:
+//	T *m_p;
+//	int *m_n;
+//};
 
 void testSharedPtr() {
 	MySharedPtr<int> p(new int(1));
