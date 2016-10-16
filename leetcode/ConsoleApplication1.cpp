@@ -10,10 +10,15 @@ void testQsort();
 void testHeapsort();
 void testPrioQueue();
 void testKmp();
+void testTrans();
+void testCfg();
+void testReplace();
+void testLCS();
+void testSharedPtr();
 
 int main()
 {
-	testKmp();
+	testSharedPtr();
     return 0;
 }
 
